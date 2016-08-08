@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{width:550px; height:210px; margin:100px auto;}
+        #box div{width:100px; height:100px; background:#000; position:relative; color:#fff;
+        overflow:hidden; margin-right:10px; margin-bottom:10px; float:left;}
+        #box div span{width:100px; height:100px; background:red; position:absolute;
+            top:-100px; left:0;}
+    </style>
+    <script src="move.js"></script>
+    <script>
+        function  getDir(obj,ev){
+            var x=obj.getBoundingClientRect().left+obj.offsetWidth/2-ev.clientX;
+            var y=obj.getBoundingClientRect().top+obj.offsetHeight/2-ev.clientY;
+
+            return Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
+        }
+        function change(obj){
+            var aS=obj.children[0];
+
+            obj.onmouseenter=function(ev){
+                var oEvent=ev||event;
+                var dir=getDir(obj,oEvent);
+                switch(dir){
+                    case 0:
+                        aS.style.left='100px';
+                        aS.style.top=0;
+                        break;
+                    case 1:
+                        aS.style.left=0;
+                        aS.style.top='100px';
+                        break;
+                    case 2:
+                        aS.style.left='-100px';
+                        aS.style.top=0;
+                        break;
+                    case 3:
+                        aS.style.left=0;
+                        aS.style.top='-100px';
+                        break;
+                }
+                move(aS,{left:0,top:0});
+            };
+            obj.onmouseleave=function(ev){
+                var oEvent=ev||event;
+                var dir=getDir(obj,oEvent);
+                switch(dir){
+                    case 0:
+                        move(aS,{left:100,top:0});
+                        break;
+                    case 1:
+                        move(aS,{left:0,top:100});
+                        break;
+                    case 2:
+                        move(aS,{left:-100,top:0});
+                        break;
+                    case 3:
+                        move(aS,{left:0,top:-100});
+                        break;
+                }
+            };
+        }
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            var aDiv=oBox.children;
+            for(var i=0;i<aDiv.length;i++){
+                change(aDiv[i]);
+            }
+
+        };
+    </script>
+</head>
+<body>
+<div id="box">
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+</div>
+</body>
+</html>

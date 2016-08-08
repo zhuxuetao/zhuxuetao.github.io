@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box input{width:60px; height:20px; border:none; outline:none; margin-right:4px; color:#fff;}
+        #box div{width:200px; height:200px; background:#000; font-size:30px; color:#fff; text-align:center;
+        line-height:200px; display:none; margin-top:10px;}
+        #box .on{background:red;}
+        #box .show{display:block;}
+    </style>
+    <script>
+        function Tab(id){
+            this.oBox=document.getElementById(id);
+            this.aBtn=this.oBox.getElementsByTagName('input');
+            this.aDiv=this.oBox.getElementsByTagName('div');
+            this.iNow=0;
+            this.init();
+        }
+        Tab.prototype.init=function(){
+            var _this=this;
+            for(var i=0;i<this.aBtn.length;i++){
+                (function(index){
+
+                    _this.aBtn[i].onclick=function(){
+                        _this.iNow=index;
+                        _this.tab();
+                    };
+                })(i);
+            }
+        };
+        Tab.prototype.tab=function(){
+                for(var i=0;i<this.aBtn.length;i++){
+                    this.aBtn[i].className='';
+                    this.aDiv[i].className='';
+                }
+                this.aBtn[this.iNow].className='on';
+                this.aDiv[this.iNow].className='show';
+        };
+        window.onload=function(){
+            new Tab('box');
+        };
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="button" class="on" value="yellow"/>
+    <input type="button" value="red">
+    <input type="button" value="pink">
+    <div class="show">yellow</div>
+    <div>red</div>
+    <div>pink</div>
+</div>
+</body>
+</html>

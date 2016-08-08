@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{width:300px; height:400px; margin-bottom:20px; margin-right:20px;}
+    </style>
+    <script>
+        window.onscroll=window.onload=function(){
+            var aImg=document.getElementsByTagName('img');
+                var sT=document.documentElement.scrollTop||document.body.scrollTop;
+                var cH=document.documentElement.clientHeight;
+                for(var i=0;i<aImg.length;i++){
+                    if(aImg[i].offsetTop<sT+cH){
+                        aImg[i].src=aImg[i].getAttribute('_src');
+                    }
+                }
+        };
+    </script>
+</head>
+<body>
+<img _src="image/a.jpg"/>
+<img _src="image/s.jpg"/>
+<img _src="image/d.jpg"/>
+<img _src="image/f.jpg"/>
+<img _src="image/g.jpg"/>
+<img _src="image/h.jpg"/>
+<img _src="image/a.jpg"/>
+<img _src="image/s.jpg"/>
+<img _src="image/d.jpg"/>
+<img _src="image/f.jpg"/>
+<img _src="image/g.jpg"/>
+<img _src="image/h.jpg"/>
+<img _src="image/a.jpg"/>
+<img _src="image/s.jpg"/>
+<img _src="image/d.jpg"/>
+<img _src="image/f.jpg"/>
+<img _src="image/g.jpg"/>
+<img _src="image/h.jpg"/>
+<img _src="image/a.jpg"/>
+<img _src="image/s.jpg"/>
+<img _src="image/d.jpg"/>
+<img _src="image/f.jpg"/>
+<img _src="image/g.jpg"/>
+<img _src="image/h.jpg"/>
+</body>
+</html>

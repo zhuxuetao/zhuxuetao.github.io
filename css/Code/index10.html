@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0; padding:0;}
+        body{overflow:hidden;}
+        #prelode{width:300%; height:300%;  background:rgba(235,249,8,.5); position:absolute; border-radius:50%;}
+
+        #box{width:500px; height:300px; background:#000; position:relative; left:0; top:0;
+        opacity:0;}
+        #box .r{width:20px; height:100%; background:pink; position:absolute; right:0;
+        top:0}
+        #box .t{width:100%; height:20px; background:pink; position:absolute; top:0;
+        left:0;}
+        #box .b{width:100%; height:20px; background:pink; position:absolute; bottom:0;
+        left:0;}
+        #box .l{width:20px; height:100%; background:pink; position:absolute; left:0;
+        top:0;}
+        #box .lt{width:20px; height:20px; background:red; position:absolute; left:0;
+        top:0; z-index:3;}
+        #box .lb{width:20px; height:20px; background:red; position:absolute; bottom:0;
+        left:0;}
+        #box .rb{width:20px; height:20px; background:red; position:absolute; right:0;
+        bottom:0;}
+        #box .tr{width:20px; height:20px; background:red; position:absolute; right:0;
+        top:0; z-index:3;}
+        #box #drga{width:100%; height:10px; background:orangered; position:absolute; left:0; top:0;
+        z-index:1;}
+    </style>
+    <script src="move.js"></script>
+    <script>
+        function drag(obj1,obj2){
+            obj1.onmousedown=function(ev){
+                var oEvent=ev||event;
+                if(obj1.className.indexOf('r')!=-1){
+                    var disX=oEvent.clientX-obj2.offsetWidth;
+                }
+                if(obj1.className.indexOf('b')!=-1){
+                    var disY=oEvent.clientY-obj2.offsetHeight;
+                }
+                if(obj1.className.indexOf('l')!=-1){
+                    var disX=oEvent.clientX;
+                    var W=obj2.offsetWidth;
+                    var L=obj2.offsetLeft;
+                }
+                if(obj1.className.indexOf('t')!=-1){
+                    var disY=oEvent.clientY;
+                    var H=obj2.offsetHeight;
+                    var T=obj2.offsetTop;
+                }
+                document.onmousemove=function(ev){
+                    var oEvent=ev||event;
+                    if(obj1.className.indexOf('r')!=-1){
+                        obj2.style.width=oEvent.clientX-disX+'px';
+                    }
+                    if(obj1.className.indexOf('b')!=-1){
+                        obj2.style.height=oEvent.clientY-disY+'px';
+                    }
+                    if(obj1.className.indexOf('l')!=-1){
+                        obj2.style.left=oEvent.clientX-disX+L+'px';
+                        obj2.style.width=W-(oEvent.clientX-disX)+'px';
+                    }
+                    if(obj1.className.indexOf('t')!=-1){
+                        obj2.style.height=H-(oEvent.clientY-disY)+'px';
+                        obj2.style.top=oEvent.clientY-disY+T+'px';
+                    }
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                };
+                return false;
+            };
+        }
+        window.onload=function(){
+            var oPld=document.getElementById('prelode');
+            var oBox=document.getElementById('box');
+            var oDrga=document.getElementById('drga');
+            var aDiv=oBox.children;
+            var w=oPld.offsetWidth;
+            var h=oPld.offsetHeight;
+
+            oPld.style.left=-w+'px';
+            oPld.style.top=-h+'px';
+            move(oPld,{left:-w/2,top:-h/2},{complete:function(){
+                move(oBox,{opacity:1});
+            }});
+            for(var i=0;i<aDiv.length;i++){
+                drag(aDiv[i],oBox);
+            }
+            oDrga.onmousedown=function(ev){
+                var oEvent=ev||event;
+                var disX=oEvent.clientX-oBox.offsetLeft;
+                var disY=oEvent.clientY-oBox.offsetTop;
+                document.onmousemove=function(ev){
+                    var oEvent=ev||event;
+                    oBox.style.left=oEvent.clientX-disX+'px';
+                    oBox.style.top=oEvent.clientY-disY+'px';
+                };
+                document.onmouseup=function(){
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                    oBox.releaseCapture&&oBox.releaseCapture();
+                };
+                oBox.setCapture&&oBox.setCapture();
+                return false;
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="prelode"></div>
+
+<div id="box">
+    <div id="drga"></div>
+    <div class="r"></div>
+    <div class="b"></div>
+    <div class="l"></div>
+    <div class="t"></div>
+    <div class="rb"></div>
+    <div class="lb"></div>
+    <div class="lt"></div>
+    <div class="tr"></div>
+</div>
+</body>
+</html>

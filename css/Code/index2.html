@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0; padding:0; list-style:none;}
+        body{overflow:hidden; }
+        #prelode{width:300%; height:300%;  background:rgba(235,249,8,.5); position:absolute; border-radius:50%;}
+        #box{width:800px; height:700px; position:relative; margin:100px auto; opacity:0;}
+        input{width:100px; height:40px; border:none; outline:none; background:#000; color:#fff;
+        font-size:16px; position:absolute; top:30px;}
+        #btn1{left:100px;}
+        #btn2{left:550px;}
+        ul{width:750px; height:500px; position:relative;top:100px; left:0;}
+        ul li{box-shadow:0 10px 30px #666;}
+        ul .li1{width:200px; height:300px; background:orangered; position:absolute; left:10px; top:10px; opacity:0.4;}
+        ul .li2{width:300px; height:400px; background:#000; position:absolute; left:230px; top:20px; opacity:1;}
+        ul .li3{width:200px; height:300px; background:greenyellow; position:absolute; left:550px; top:10px; opacity:0.4;}
+        #box div{width:200px; height:300px; background:#000; position:absolute; top:110px; z-index:1; opacity:0;}
+        #div1{left:10px;}
+        #div2{left:550px;}
+    </style>
+    <script src="move.js"></script>
+    <script>
+        function getStyle(obj,name){
+            return (obj.currentStyle||getComputedStyle(obj,false))[name];
+        }
+        window.onload=function(){
+            var oPld=document.getElementById('prelode');
+            var oBox=document.getElementById('box');
+            var w=oPld.offsetWidth;
+            var h=oPld.offsetHeight;
+
+            oPld.style.left=-w+'px';
+            oPld.style.top=-h+'px';
+            move(oPld,{left:-w/2,top:-h/2},{complete:function(){
+                move(oBox,{opacity:1});
+            }});
+            var oUl=document.getElementById('ul1');
+
+            var oL=document.getElementById('btn1');
+            var oR=document.getElementById('btn2');
+
+            var oDiv1=document.getElementById('div1');
+            var oDiv2=document.getElementById('div2');
+            var aLi=oUl.children;
+            var arr=[];
+            for(var i=0;i<aLi.length;i++){
+                arr.push({
+                    left:aLi[i].offsetLeft,
+                    top:aLi[i].offsetTop,
+                    width:aLi[i].offsetWidth,
+                    height:aLi[i].offsetHeight,
+                    opacity:getStyle(aLi[i],'opacity')
+                });
+                console.log(arr);
+            }
+            function left(){
+                arr.unshift(arr.pop());
+                for(var i=0;i<aLi.length;i++){
+                    move(aLi[i],{left:arr[i].left,top:arr[i].top,width:arr[i].width,height:arr[i].height,
+                        opacity:arr[i].opacity});
+                }
+            }
+            function right(){
+                arr.push(arr.shift());
+                for(var i=0;i<aLi.length;i++){
+                    move(aLi[i],{left:arr[i].left,top:arr[i].top,width:arr[i].width,height:arr[i].height,
+                        opacity:arr[i].opacity});
+                }
+            }
+            oL.onclick=left;
+            oR.onclick=right;
+            oDiv1.onclick=right;
+            oDiv2.onclick=left;
+        };
+    </script>
+</head>
+<body>
+<div id="prelode"></div>
+<div id="box">
+    <input type="button" id="btn1" value="⬅️"/>
+    <input type="button" id="btn2" value="➡️"/>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <ul id="ul1">
+        <li class="li1"></li>
+        <li class="li2"></li>
+        <li class="li3"></li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        div{
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 200px auto;
+            text-align: center;
+            line-height: 50px;
+            transform: scale(3);
+            opacity: 0;
+            transition: .4s all ease;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBtn=document.querySelector('#btn1');
+            var oDiv=document.querySelector('div');
+            var oClose=document.querySelector('a');
+
+            oBtn.onclick=function(){
+                oDiv.style.transform='scale(1)';
+                oDiv.style.opacity=1;
+            };
+            oClose.onclick=function(){
+                oDiv.style.transform='scale(3)';
+                oDiv.style.opacity=0;
+            };
+        };
+    </script>
+</head>
+<body>
+<input type="button" value="登录" id="btn1">
+<div>
+    user：<input type="text"><br>
+    pass：<input type="text"><br>
+    <input type="button" value="登录">
+    <a href="javascript:;">X</a>
+</div>
+</body>
+</html>

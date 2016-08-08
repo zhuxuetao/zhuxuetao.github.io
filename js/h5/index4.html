@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            border: 1px dashed #000;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -100px 0 0 -100px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oBox=document.querySelector('#box');
+            var oM=document.querySelector('meter');
+
+            var timer;
+            document.ondragover=function(){
+                oBox.style.display='block';
+                clearTimeout(timer);
+                timer=setTimeout(function(){
+                    oBox.style.display='none';
+                }, 200);
+            };
+
+            oBox.ondragenter=function(){
+                oBox.innerHTML='请释放鼠标';
+            };
+            oBox.ondragleave=function(){
+                oBox.innerHTML='请将文件拖至此区域';
+            };
+
+            oBox.ondragover=function(){
+                return false;
+            };
+            oBox.ondrop=function(ev){
+                var oFile=ev.dataTransfer.files[0];
+
+                var reader=new FileReader();
+
+                reader.onload=function(){
+                    alert(reader.result);
+                };
+                reader.onerror=function(){
+                    alert('读取失败');
+                };
+                reader.onloadend=function(){
+                    alert('读取完成');
+                };
+                reader.onloadstart=function(){
+                    alert('开始读取');
+                };
+                reader.onabort=function(){
+                    alert('读取中断');
+                };
+                reader.onprogress=function(ev){
+                    var scale=ev.loaded/ev.total;
+                    oM.value=scale*100;
+
+                    if(scale>0.5){
+                        reader.abort();
+                    }
+                    console.log('读取过程中'+scale);
+                };
+
+                reader.readAsDataURL(oFile);
+                return false;
+            };
+        };
+    </script>
+</head>
+<body>
+    <meter min="0" max="100" style="width: 500px;height: 30px;"></meter>
+    <div id="box">
+        请将文件拖至此区域
+    </div>
+</body>
+</html>

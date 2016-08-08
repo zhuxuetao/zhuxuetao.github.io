@@ -1,0 +1,13 @@
+@charset "UTF-8";
+/* CSS Document */
+*{padding:0; margin:0;}
+a{text-decoration:none; color:#000;}
+li{list-style:none;}
+img{vertical-align:top; border:none;}
+li{list-style:none;}
+.fr{float:right;}
+.fl{float:left;}
+.clearfix:after{content:''; display:block; clear:both;}
+input,textarea{border:none; outline:none; background:none;}
+textarea{resize:none;}
+.w{margin:0 auto;}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0; padding:0; list-style:none;
+        }
+        body{
+            background:#666; overflow:hidden;
+        }
+        ul{
+             transform-style:preserve-3d;
+            perspective:800px;
+        }
+        ul li{
+            width:12.5%; height:300px; float:left; background:#fff; color:#000;
+            font-size:50px; text-align:center; line-height:300px;
+        }
+        ul .active{
+           transition:.1s all ease; transform:translateY(10px);
+        }
+    </style>
+    <script src="sound.js"></script>
+    <script>
+        window.onload=function(){
+            var oUl=document.querySelector('#ul1');
+            var aLi=oUl.children;
+            for(var i=0;i<aLi.length;i++){
+                if(i%2==1){
+                    aLi[i].style.background='#000';
+                    aLi[i].style.color='#fff';
+                }
+            }
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].dataset.index=i;
+                aLi[i].onmousedown=function(){
+                    this.classList.add('active');
+                    var oAudio=new Audio();
+                    oAudio.src=oggSound['sound'+(parseInt(this.dataset.index)+49)];
+                    oAudio.play();
+                };
+                aLi[i].onmouseup=function(){
+                    this.classList.remove('active');
+                };
+            }
+        };
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+</ul>
+</body>
+</html>

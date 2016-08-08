@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width:200px; height:300px;
+            position:absolute; left:50%; top:50%; margin-left:-100px; margin-top:-150px; transform-style:preserve-3d; transition:1s all ease;
+            transform:perspective(800px);
+        }
+        div span{
+            width:100%; height:100%; font-size:50px; color:#fff; text-align:center;
+            line-height:300px; position:absolute; left:0; top:0;
+        }
+        .span1{
+            background:green; transform:translateZ(2px);
+        }
+        .span2{
+            background:blue; transform:translateZ(-1px) scale(-1,1);
+        }
+        div:active{
+            transform:rotateY(-180deg);
+        }
+    </style>
+
+</head>
+<body>
+<div>
+    <span class="span1">1</span>
+    <span class="span2">2</span>
+</div>
+</body>
+</html>

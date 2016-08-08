@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+div{ width:700px; height:400px; background:url(image/0.jpg) no-repeat; margin:100px auto;
+	background-size:cover; position:relative; }
+	input{width:100px; height:40px; border:none; background:#666; outline:none;  position:absolute; left:50%;
+	margin-left:-50px; top:20px; color:#fff;}
+</style>
+<script src="move.js"></script>
+<script>
+window.onload=function (){
+	var oBtn=document.getElementById('btn1');
+	var oBox=document.getElementById('div1');
+	
+	var R=4; 	//行
+	var C=7; 	//列
+	for(var i=0; i<R; i++){
+		for(var j=0; j<C; j++){
+			var oS=document.createElement('span');
+			oS.style.width=oBox.offsetWidth/C+'px';
+			oS.style.height=oBox.offsetHeight/R+'px';
+			oBox.appendChild(oS);
+			oS.style.position='absolute';
+			oS.style.left=j*oS.offsetWidth+'px';
+			oS.style.top=i*oS.offsetHeight+'px';
+			oS.style.backgroundImage='url(image/0.jpg)';
+			oS.style.backgroundRepeat='no-repeat';
+			oS.style.backgroundPosition='-'+oS.offsetLeft+'px -'+oS.offsetTop+'px';
+			oS.style.backgroundSize='700px 400px';
+			
+			oS.c=i;
+			oS.r=j;
+		}
+	}
+	
+	var aS=document.getElementsByTagName('span');
+	var iNow=0;
+	
+	oBtn.onclick=function (){
+		iNow++;
+		for(var i=0; i<aS.length; i++){
+			(function (index){
+				if(iNow%3==2){
+					oBox.style.backgroundImage='url(image/1.jpg)';
+				}else{
+					oBox.style.backgroundImage='url(image/'+(iNow%3+1)+'.jpg)';
+				}
+				setTimeout(function (){
+					aS[index].style.backgroundImage='url(image/'+iNow%3+'.jpg)';
+					aS[index].style.opacity=0;
+					aS[index].style.filter='alpha(opacity:0)';
+					move(aS[index],{opacity:1});
+				},100*(aS[index].c+aS[index].r));
+			})(i);
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+	<input type="button" value="走一个" id="btn1" />
+	<div id="div1"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

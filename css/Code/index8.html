@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .span1{width:100px; height:20px; display:block; position:absolute; left:50.4%; top:10px;
+        margin-left:-25px;}
+        .span2{width:100px; height:20px; display:block; position:absolute; left:51%; top:30px;
+            margin-left:-25px;}
+        #div1{width:300px; height:300px; border-radius:50%; margin:100px auto; position:relative;}
+        #div1 div{width:50px; height:50px; background:pink; position:absolute; top:0;
+            left:50%; margin-left:-25px; margin-top:-25px; border-radius:50%;}
+    </style>
+    <script src="doMove.js"></script>
+    <script>
+        function d2a(n){
+            return n*Math.PI/180;
+        }
+        window.onload=function(){
+            var oBox=document.getElementById('div1');
+            var R=oBox.offsetWidth/2;
+            var n=9;
+            for(var i=0;i<n;i++){
+                var oDiv=document.createElement('div');
+                oBox.appendChild(oDiv);
+            }
+            var bOk=true;
+            var aDiv=oBox.getElementsByTagName('div');
+            for(var j=0;j<aDiv.length;j++){
+                aDiv[j].onclick=function(){
+                    if(bOk){
+                        for(var i=0;i<aDiv.length;i++){
+                            move(aDiv[i],i*40);
+                        }
+                    }else{
+                        for(var i=0;i<aDiv.length;i++){
+                            move(aDiv[i],0);
+                        }
+                    }
+                    bOk=!bOk;
+                };
+            }
+
+            function move(obj,iTarget,fn){
+                var start=obj.left||0;
+                var dis=iTarget-start;
+                var count=Math.round(1000/16);
+                var n=0;
+                clearInterval(obj.timer);
+                obj.timer=setInterval(function(){
+                    n++;
+                    var cur=start+dis*n/count;
+                    var x=R+Math.sin(d2a(cur))*R;
+                    var y=R-Math.cos(d2a(cur))*R;
+                    obj.style.left=x+'px';
+                    obj.style.top=y+'px';
+                    if(n==count){
+                        clearInterval(obj.timer);
+                        obj.left=cur;
+                        fn&&fn();
+                    }
+                },16);
+            }
+        };
+
+    </script>
+</head>
+<body>
+<span class="span1">点击</span>
+<span class="span2">⬇️</span>
+
+<div id="div1">
+
+</div>
+</body>
+</html>

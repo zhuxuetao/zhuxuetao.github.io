@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin:0; padding:0;}
+        #div1{width:400px; height:300px; border:1px solid #000; position:relative; float:left;}
+        #div1 span{width:100px; height:100px; background:#000; position:absolute; left:0; top:0;
+        display:none;}
+        #div1 img{width:400px; height:300px;}
+        #div2{width:400px; height:300px; float:left; border:1px solid #000; display:none;
+        overflow:hidden; position:relative;}
+        #img{position:absolute; left:0; top:0;}
+    </style>
+    <script>
+        window.onload=function(){
+            var oDiv1=document.getElementById('div1');
+            var oDiv2=document.getElementById('div2');
+            var oS=document.getElementById('span');
+            var oImg=document.getElementById('img');
+            oDiv1.onmouseenter=function(){
+                oS.style.display='block';
+                oDiv2.style.display='block';
+            };
+            oDiv1.onmouseleave=function(){
+                oS.style.display='none';
+                oDiv2.style.display='none';
+            };
+            oDiv1.onmousemove=function(ev){
+                var oEvent=ev||event;
+                var disX=oEvent.clientX-oS.offsetWidth/2;
+                var disY=oEvent.clientY-oS.offsetHeight/2;
+                if(disX<0){
+                    disX=0;
+                }else if(disX>oDiv1.offsetWidth-oS.offsetWidth){
+                    disX=oDiv1.offsetWidth-oS.offsetWidth;
+                }
+                if(disY<0){
+                    disY=0;
+                }else if(disY>oDiv1.offsetHeight-oS.offsetHeight){
+                    disY=oDiv1.offsetHeight-oS.offsetHeight;
+                }
+                oS.style.left=disX+'px';
+                oS.style.top=disY+'px';
+                oImg.style.left=-disX/(oDiv1.offsetWidth-oS.offsetWidth)*(oImg.offsetWidth-oDiv2.offsetWidth)+'px';
+                oImg.style.top=-disY/(oDiv1.offsetHeight-oS.offsetHeight)*(oImg.offsetHeight-oDiv2.offsetHeight)+'px';
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="div1">
+    <span id="span"></span>
+    <img src="image/9.jpg"/>
+</div>
+<div id="div2">
+    <img id="img" src="image/9.jpg" />
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0; padding:0; list-style:none;}
+        body{overflow:hidden;}
+        #prelude{width:300%; height:300%; border-radius:50%; position:absolute; background:hotpink;}
+        #box{width:700px; height:400px; border:1px solid #000; margin:100px auto; overflow:hidden; opacity:0;}
+        #box ul{position:relative; width:500px; height:400px;}
+
+        #box li{width:700px; height:400px; position:absolute; left:0; top:0; text-align:center; line-height:400px;
+        font-size:50px; color:#fff;}
+        #box img{width:700px; height:400px;}
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload=function(){
+            var oPld=document.getElementById('prelude');
+            var oBox=document.getElementById('box');
+
+            var w=oPld.offsetWidth;
+            var h=oPld.offsetHeight;
+
+            oPld.style.right=-w+'px';
+            oPld.style.top=-h+'px';
+            move(oPld,{right:-w/2,top:-h/2},{complete:function(){
+                move(oBox,{opacity:1});
+            }});
+
+            var oUl=document.getElementById('ul1');
+            var aLi=oUl.children;
+            var W=40;
+            var dir=700;
+            for(var i=1;i<aLi.length;i++){
+                aLi[i].style.left=dir-W*(aLi.length-i)+'px';
+            }
+            for(var i=0;i<aLi.length;i++){
+                (function(index){
+                    aLi[i].onmouseover=function(){
+                        for(var i=0;i<aLi.length;i++){
+                            if(index>=i){
+                                move(aLi[i],{left:i*W});
+                            }else{
+                                move(aLi[i],{left:dir-W*(aLi.length-i)});
+                            }
+                        }
+                    };
+                })(i);
+            }
+        };
+    </script>
+</head>
+<body>
+<div id="prelude"></div>
+<div id="box">
+    <ul id="ul1">
+        <li style="background:orangered;">1</li>
+        <li style="background:greenyellow">2</li>
+        <li style="background:deeppink;">3</li>
+        <li style="background:deepskyblue;">4</li>
+    </ul>
+</div>
+</body>
+</html>

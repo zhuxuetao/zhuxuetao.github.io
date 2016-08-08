@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0; padding:0; list-style:none;}
+        body{overflow:hidden;}
+        #prelode{width:300%; height:300%;  background:rgba(235,249,8,.5); position:absolute; border-radius:50%;}
+        #ul1 {width:330px; height:330px; margin:100px auto; opacity:0;}
+        #ul1 li{width:100px; height:100px; background:#000;text-align:center; line-height:100px; font-size:40px;
+         color:#fff; float:left; margin-right:10px; margin-top:10px;}
+        #btn{opacity:0; position:relative;}
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload=function(){
+            var oPld=document.getElementById('prelode');
+            var oUl=document.getElementById('ul1');
+            var aLi=oUl.children;
+            var oBtn=document.getElementById('btn');
+
+            var w=oPld.offsetWidth;
+            var h=oPld.offsetHeight;
+
+            oPld.style.left=-w+'px';
+            oPld.style.top=-h+'px';
+            move(oPld,{left:-w/2,top:-h/2},{complete:function(){
+                move(oUl,{opacity:1});
+                move(oBtn,{opacity:1});
+            }});
+
+            var aPos=[];
+            for(var i=0;i<aLi.length;i++){
+                aPos[i]={left:aLi[i].offsetLeft,top:aLi[i].offsetTop};
+            }
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].style.position='absolute';
+                aLi[i].style.left=aPos[i].left+'px';
+                aLi[i].style.top=aPos[i].top+'px';
+                aLi[i].style.margin=0;
+            }
+            var timer=null;
+            oBtn.onclick=function(){
+                var i=0;
+                clearInterval(timer);
+                timer=setInterval(function(){
+                    (function(index){
+                        move(aLi[i],{left:0,top:0,width:0,height:0,opacity:0},{complete:function(){
+                            if(index==aLi.length-1){
+                                var i=aLi.length-1;
+                                clearInterval(timer);
+                                timer=setInterval(function(){
+                                    move(aLi[i],{left:aPos[i].left,top:aPos[i].top,height:100,width:100,opacity:1});
+                                    i--;
+                                    if(i==-1){
+                                        clearInterval(timer);
+                                    }
+                                },100);
+                            }
+                        }});
+                        i++;
+                        if(i==aLi.length){
+                            clearInterval(timer);
+                        }
+                    })(i);
+                },100);
+
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="prelode"></div>
+<input type="button" value="按钮" id="btn"/>
+<ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+</ul>
+</body>
+</html>

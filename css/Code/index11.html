@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0; padding:0;}
+        #box{width:300px; height:400px; border:1px solid #000; margin:100px auto; position:relative;
+        overflow:hidden;}
+        #box ul{height:400px; position:absolute;}
+        #box ul li{width:300px; height:400px; background:orangered; font-size:50px; color:red;
+        text-align:center; line-height:400px; float:left; list-style:none;}
+    </style>
+    <script src="doMove.js"></script>
+    <script>
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            var oUl=oBox.children[0];
+            var aLi=oUl.children;
+            var iNow=0;
+            oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';
+            for(var i=0;i<aLi.length;i++){
+                if(i%2==0){
+                    aLi[i].style.background='yellow';
+                }
+            }
+            oUl.onmousedown=function(ev){
+                var oEvent=ev||event;
+                var disX=oEvent.clientX-oUl.offsetLeft;
+                var down=oEvent.clientX;
+                document.onmousemove=function(ev){
+                    var oEvent=ev||event;
+                    oUl.style.left=oEvent.clientX-disX+'px';
+                };
+                document.onmouseup=function(ev){
+                    var oEvent=ev||event;
+                    var dis=Math.abs(oEvent.clientX-down);
+                    if(dis>40){
+                        if(oEvent.clientX>down){
+                            iNow++;
+                            if(iNow>0){
+                                iNow=0;
+                            }
+                            move2(oUl,{left:iNow*aLi[0].offsetWidth});
+                        }else{
+                            iNow--;
+                            if(iNow<-(aLi.length-1)){
+                                iNow=-(aLi.length-1);
+                            }
+                            move2(oUl,{left:iNow*aLi[0].offsetWidth});
+                        }
+                    }else{
+                        move2(oUl,{left:iNow*aLi[0].offsetWidth});
+                    }
+                    document.onmousemove=null;
+                    document.onmouseup=null;
+                    oUl.releaseCapture&&oUl.releaseCapture();
+                };
+                oUl.setCapture&&oUl.setCapture();
+                return false;
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+</body>
+</html>

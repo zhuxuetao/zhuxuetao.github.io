@@ -1,0 +1,1575 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" href="base.css"/>
+<style>
+.w{width:1000px;}
+.helin{width:1000px; height:410px; position:relative;}
+.helin2 img{width:1000px; height:410px;}
+.dahsg{width:266px; height:30px; position:absolute; top:10px; left:310px;}
+.dahsg input{width:219px; height:28px; border:1px solid #8ba4ab; padding-left:10px; font-size:12px; color:#fff; border-right:none; border-radius:3px;}
+.dahsg a{width:36px; height:30px; background:url(img/sprite.png)no-repeat 0 -15px;}
+.denlu{width:330px; height:12px; position:absolute; top:20px; right:0;}
+.denlu li{margin-right:10px; }
+.denlu li a{font-size:12px; color:#fff;}
+.denlu li a:hover{color:red;}
+.shangc{position:relative;}
+.shangc i{width:14px; height:12px; background:url(img/nav-upload.png)no-repeat; margin-right:2px;}
+.shangc span{width:0; height:0; border:4px solid transparent; border-top:4px solid #fff; margin-top:4px; margin-left:3px;}
+.shangc p{width:7px; height:7px; background:red; border-radius:3px; position:absolute;top:-6px; left:40px;}
+.shangc .xiazai{width:7px; height:7px; background:red; border-radius:3px; position:absolute;top:-6px; left:25px;}
+.beishang{ position:relative;}
+.beishang img{width:247px; height:371px; position:absolute;top:40px; right:10px;}
+.beishang2{width:213px; height:342px; position:absolute; top:57px; right:28px;}
+.beishang2 li{width:213px; height:34px; text-align:center;}
+.beishang2 li a{font-size:12px; color:#fff; line-height:34px;}
+.beishang2 li:hover{background:#699f00;}
+.beijsh{background:#000; height:106px;}
+.daohang{width:978px; height:88px; border:1px solid #688a00; margin-top:8px; margin-left:10px; border-radius:10px;}
+.daohang .logo{width:107px; height:35px; background:url(img/logo.png)no-repeat; margin-top:18px; margin-left:18px;}
+.logo h1{text-indent:-999px;}
+.logo i{width:108px; height:13px; background:url(img/logoyxpz_new.png); margin-top:8px;}
+.dhaohz{width:841px; height:74px; margin-left:11px; margin-top:8px;}
+.dhaohz li a{font-size:12px; color:#fff; line-height:25px;}
+.wule{width:50px; height:74px; border-right:1px solid #4a6300;}
+.wule a{font-size:12px; color:#fff; line-height:25px; padding-left:11px;}
+.dianying{width:114px; height:74px;  border-right:1px solid #4a6300;}
+.dianying a{padding-left:18px;}
+.donman{width:79px; height:74px; border-right:1px solid #4a6300; padding-left:17px;}
+.donman a{padding-right:11px;}
+.fyunb{width:154px; height:74px; border-right:1px solid #4a6300; padding-left:30px;}
+.fyunb a{padding-right:20px;}
+.pps{width:151px; height:74px; padding-left:30px;}
+.pps a{padding-right:20px; position:relative;}
+.pps a span{width:7px; height:7px; background:red; border-radius:3px; position:absolute;top:0; left:46px;}
+.dhaohz li a:hover{color:red;}
+.jirjiaod{width:980px; margin-top:21px;}
+.jdtouz{width:380px; height:431px; }
+.jdtou{width:380px; height:44px; border-bottom:2px solid #85ba4d;}
+.jdtou h2{font-size:24px; color:#699f00; line-height:44px;}
+.jdtou .gd{font-size:12px; color:#699f00; margin-top:20px; margin-left:7px;}
+.jdtou .dubo{width:36px; height:24px; border:1px solid #ececec; border-radius:12px; font-size:12px; color:#000; line-height:24px; padding-left:28px; background:url(img/wujiaox.png)no-repeat 8px 3px; margin-top:9px;}
+.xinwdh{width:380px; height:389px;}
+.xinwdh .xinwdh2{width:380px; height:40px; margin-top:12px;}
+.xinwdh2 .shuji{font-size:19px; color:#333333; line-height:40px;  font-size:18px; padding-left:30px;}
+.xinwdhx{width:380px; height:31px;}
+.xinwdhx2 i{width:13px; height:13px; background:url(img/sprite.png)no-repeat -100px -1420px; margin-top:9px; margin-right:8px;}
+.xinwdhx2 span{font-size:12px; color:#000; line-height:31px;}
+.xinwdh .rxsc{width:180px; height:136px; margin-top:10px;}
+.rxsc .rxsc2{width:180px; height:34px; border-bottom:1px solid #ccc; background:#f2f2f2;font-size:12px; color:#000; text-align:center; line-height:34px; }
+.xinwdh .rxscc{margin-left:20px;}
+.dxtan{width:380px; height:431px; margin-left:20px;}
+.bagxt{width:380px; height:252px; position:relative;}
+.bagxt a img{width:380px; height:252px;}
+.quanzil{width:380px; height:40px; background:#000; opacity:0.5; position:absolute; bottom:0; left:0;}
+.quanzil2{width:380px; height:40px; position:absolute; bottom:0; left:0;}
+.quanzil2 i{width:32px; height:27px; background:url(img/sprite.png)no-repeat 0 -45px; margin:7px 12px 0 7px;}
+.quanzil2 span{font-size:15px; color:#fff; line-height:40px;}
+.xinwdhxc{margin-top:16px;}
+.caiyan{width:180px; height:438px; margin-left:20px;}
+.rxsce{margin-top:15px;}
+.zhongyi{width:780px; height:399px; margin-top:37px;}
+.zhongyitou{width:780px; height:49px; border-bottom:2px solid #8ac024;}
+.zhongyitou2{width:133px; height:40px;}
+.zhongyitou2 i{width:15px; height:25px; background:url(img/sprite.png)no-repeat -120px
+-1160px; margin-top:14px; margin-right:5px;}
+.zhongyitou2 h2{font-size:27px; color:#699f00; line-height:49px;}
+.zhongyitou2 .duod{font-size:12px;color:#699f00; margin:25px 0 0 17px;}
+.ascaom{width:365px; height:14px; margin-top:26px; margin-left:34px;}
+.ascaom a{font-size:12px; color:#333333; line-height:14px;}
+.ascaom span{width:14px; height:14px; background:url(img/sprite.png)no-repeat 0 -72px;
+margin:0 8px;}
+.reke{margin-top:16px;}
+.xinwdh li a:hover{color:red;}
+.xinwdh li span:hover{color:red;}
+.xinwdhx2 span:hover{color:red;}
+.ascaom a:hover{color:red;}
+.today{width:380px; height:325px; margin-top:25px; position:relative;}
+.today a img{width:380px; height:270px;}
+.today i{width:125px; height:45px; background:url(img/icon-today.png)no-repeat; position:absolute; top:0; left:0;}
+.today span{width:39px; height:39px; background:url(img/sprite.png)no-repeat -82px -530px;  position:absolute; top:0; right:0;}
+.today .qxdu{width:42px; height:16px; background:#000; font-size:12px; color:#fff; text-align:center; line-height:16px; position:absolute; bottom:70px; left:10px;}
+.today .rqi{width:42px; height:16px; background:#000; font-size:12px; color:#fff; text-align:center; line-height:16px; position:absolute; bottom:70px; right:10px;}
+.fsnht{width:380px; height:54px; border-bottom:1px solid #ebebeb; background:#f2f2f2;}
+.fsnht p{font-size:12px; line-height:20px; margin-left:10px; color:#999999;}
+.fsnht .huitan{margin-top:7px; color:#000;}
+.zizhi{width:380px; height:325px; margin-left:20px; margin-top:25px;}
+.zizhi2{width:180px; height:155px; position:relative;}
+.zizhi2 a img{width:180px; height:101px;}
+.liuxw{width:180px; height:53px; border-bottom:1px solid #ebebeb; background:#f2f2f2;}
+.liuxw p{line-height:21px; font-size:12px; color:#999999; margin-left:5px;}
+.zizhi3{margin-left:20px;}
+.zizhi .qxds{width:42px; height:16px; background:#000; border-radius:3px; opacity:0.5; position:absolute; bottom:60px; left:5px;}
+.zizhi2 .qxds2{font-size:12px; color:red; position:absolute; bottom:61px; left:9px;}
+.zizhig{margin-top:15px;}
+.zhongyw{width:180px; height:49px; border-bottom:2px solid #8ac024; margin-top:37px;}
+.zhongyw .duod{margin-left:10px;}
+.ggunj{width:180px; height:224px; background:#f2f2f2;}
+.xeniii img{width:180px; height:101px; margin-top:25px;}
+.ggunj .ggei{width:170px; height:37px; border-bottom:1px dotted #cbcbcb; margin-left:5px;}
+.ggei a{font-size:12px; color:#333333; line-height:37px;width:170px; text-align:center;}
+.qiaozy{width:160px; height:34px; margin-left:10px;}
+.qiaozy a{font-size:14px; color:#333333; padding-left:11px; line-height:34px;}
+.qiaozy i{width:6px; height:6px; background:url(img/sprite.png)no-repeat -200px -700px; margin-top:15px;}
+.benbaoxd{width:1000px; height:43px; border-bottom:1px solid #e1e1e1; margin-top:12px;}
+.benbaoxd h2{font-size:21px; color:#699f00; line-height:43px;}
+.benbaoxd .dubod{width:33px; height:19px; background:pink; font-size:12px; color:#fff; line-height:19px; text-align:center; border-radius:8px 8px 8px 0; margin:13px 12px 0 4px;}
+.benbaoxd a{font-size:12px; color:#699f00; margin-top:18px;}
+.runningman{width:1000px; height:155px; margin-top:15px;}
+.runningmanx{width:180px; height:155px;position:relative;}
+.runningmanx a img{width:180px; height:101px;}
+.runningmanx2 .qxdq{width:42px; height:16px; background:#000; opacity:0.5; position:absolute; bottom:57px; left:4px; border-radius:5px;}
+.runningmanx2 .qxdq2{font-size:12px; color:#fff; position:absolute; bottom:58px; left:8px;}
+.runningmanx2 i{width:39px; height:39px; background:url(img/sprite.png)no-repeat -82px -529px; position:absolute; top:0; right:0;}
+.runningmanx2 .qxdqa{width:54px; height:16px; background:#000; opacity:0.5; position:absolute; bottom:57px; right:5px; border-radius:5px;}
+.runningmanx2 .qxdqa2{font-size:12px; color:#fff; position:absolute; bottom:58px; right:10px;}
+.zphgu{width:180px; height:53px; background:#f2f2f2;}
+.zphgu a{width:54px; height:19px; background:#fff; border:1px solid #e7e7e7; margin:6px 0 0 5px; font-size:12px; color:#979f4f; line-height:19px; text-align:center;}
+.zphgu span{font-size:14px; color:#000; line-height:21px;}
+.runningmanc{margin-left:20px;}
+.guangao{margin-top:20px;}
+.tuijiangg{width:982px; height:160px; border:1px solid #8ac024; }
+.prguang{width:170px; height:140px; background:pink; margin-top:10px; margin-left:26px;}
+.prou img{width:170px; height:100px;}
+.prguang2{width:170px; height:40px; background:#f3f3f3;}
+.prguang2 a{margin-top:5px; margin-left:16px;}
+.prguangm{margin-left:20px;}
+.tuijianggc{width:982px; height:160px; margin-top:62px; position:relative;}
+.ggdw{width:84px; height:22px; background:#8ac024; font-size:12px; color:#fff; text-align:center; line-height:22px; border-radius:4px 4px 0 0; position:absolute; top:-22px; left:0;}
+.youjt{width:15px; height:26px; background:url(img/youjiant.png)no-repeat; position:absolute; top:67px; left:4px;}
+.youjt2{width:15px; height:26px; background:url(img/youjiant2.png)no-repeat; position:absolute; top:67px; right:4px;}
+.donmantou{width:580px; height:44px; border-bottom:2px solid #8ac024;}
+.haizw{width:580px; height:358px; margin-top:41px;}
+.fsnhtx{width:380px; height:35px;}
+.todayj a img{width:380px; height:252px;}
+.todayj{width:380px; height:287px;}
+.todayj .qxdud{position:absolute; bottom:40px; left:10px;}
+.todayj .rqid{position:absolute; bottom:40px; right:10px;}
+.zizhiw{margin-top:25px; margin-left:20px; height:136px;}
+.zizhif{margin-top:15px; margin-left:20px; height:136px; }
+.zizhiw .liuxwd{width:180px; height:34px;}
+.zizhif .liuxww{width:180px; height:34px;}
+.shaoer{width:180px; height:358px; margin-top:41px; margin-left:20px;}
+.zhongyw2{margin-top:0; height:44px;}
+.zhongyw2 h2{line-height:44px;}
+.zhongyw2 .duod{margin-top:20px;}
+.caiyanff{margin-left:0;}
+.rxsceg{margin-top:25px;}
+.rxsce a img{width:180px; height:101px;}
+.cnxih{width:980px; margin-top:40px; height:397px;}
+.cnxihtou{width:980px; height:45px; border-bottom:2px solid #8ac024;}
+.cnxihtou i{width:15px; height:25px; background:url(img/sprite.png)no-repeat -120px -1160px; margin-top:10px;}
+.cnxihtou h2{font-size:26px; color:#699f00; line-height:45px; margin:0 8px 0 5px;}
+.cnxihtou .gdhh{font-size:12px; color:#699f00; margin-top:21px;}
+.wdbfjl{width:257px; height:14px; margin-left:33px; margin-top:22px;}
+.wdbfjl a{font-size:12px; color:#fff;}
+.wdbfjl span{width:14px; height:14px; background:url(img/sprite.png)no-repeat -140px -1160px;}
+.rman .vip{width:34px; height:17px; background:url(img/sprite.png)no-repeat -140px -1260px; position:absolute; top:10px; left:10px; border-radius:7px;}
+.rman .mianfei{width:34px; height:17px; background:url(img/sprite.png)no-repeat -180px -1260px; border-radius:7px; position:absolute; top:10px; left:10px;}
+.runningmanx2 img{width:180px; height:101px;}
+.grzx{background:#76b300;}
+.grzx a{font-size:20px; color:#fff; font-weight:bold; width:180px; height:155px; text-align:center; line-height:155px;}
+.rim{margin-top:20px;}
+.dianyzq{width:780px; height:668px; margin-top:38px;}
+.dianyzqs{width:180px; height:290px; margin-top:25px; position:relative;}
+.dianyzqs a img{width:180px; height:236px;}
+.dianyzqs .zizhigq{width:39px; height:39px; background:url(img/sprite.png)no-repeat -103px -1200px; position:absolute; top:0; right:0;}
+.dianyzqs .p80p{width:41px; height:16px; background:#000; opacity:0.5; position:absolute; bottom:60px; left:10px;}
+.dianyzqs .p80p2{font-size:12px; color:#fff; position:absolute; bottom:61px; left:11px;}
+.beitai{width:180px; height:53px; border-bottom:1px solid #ebebeb; background:#f2f2f2;}
+.beitai span{font-size:12px; color:#999999; line-height:21px;}
+.fanji{padding-top:5px; color:#000;}
+.dianyzqsb{margin-left:20px;}
+.dianyzqss{margin-top:12px;}
+.dianypan{width:180px; height:358px; margin-top:35px;}
+.zhongyitou2{margin-top:0;}
+.dypaih{width:181px; height:284px; margin-top:25px;}
+.dsxs{width:181px; height:20px;}
+.dsxs span{width:20px; height:20px; background:#74af00; font-size:14px; line-height:20px; text-align:center; margin-right:5px;}
+.dsxs a{font-size:12px; color:#000; line-height:20px;}
+.dsxs i{width:7px; height:2px; background:url(img/hengan.png)no-repeat; margin-top:10px;}
+.dsxss{margin-top:13px;}
+.dsxssx span{background:#a5a5a5;}
+.dsxssx1 i{width:7px; height:8px; background:url(img/xiajiantou.png)no-repeat; margin-top:7px;}
+.dsxssz i{width:7px; height:8px; background:url(img/shanjiantou.png)no-repeat; margin-top:7px;}
+.dss{margin-top:23px;}
+.tiys{width:980px; height:358px; margin-top:41px;}
+.zysg{margin-top:39px;}
+.tiyu{width:380px; height:358px;}
+.wdbfjldn{width:226px;}
+.tiyunx{width:380px; height:287px; margin-top:25px;}
+.ydy{width:180px; height:136px;}
+.tysp{position:relative;width:180px; height:101px;}
+.tysp img{width:180px; height:101px;}
+.tysp .tmdw{width:41px; height:16px; background:#000; opacity:0.5; border-radius:7px; position:absolute; bottom:10px; left:10px; }
+.tysp .tmdw2{font-size:12px; color:#fff; position:absolute; bottom:11px; left:12px;}
+.suan11{width:180px; height:34px; border-bottom:1px solid #ebebeb; background:#f2f2f2;}
+.suan11 a{font-size:12px; color:#000; line-height:34px;}
+.ydyf{margin-left:20px;}
+.ydyq{margin-top:15px;}
+.ydyf1{margin-top:15px;}
+.tiyutou{width:380px;}
+.yinyue{margin-left:20px;}
+.quanzls{width:180px; height:252px; position:relative;}
+.quanzls img{width:180px; height:252px;}
+.quanzls .swtmsb{width:41px; height:16px; background:#000; opacity:0.5; position:absolute;
+ bottom:10px; left:10px; border-radius:7px;}
+ .quanzls .swtmsb2{font-size:12px; color:#fff; position:absolute; bottom:11px; left:12px;}
+ .luhan{width:180px; height:278px;}
+ .lhny{width:180px; height:34px; background:#f2f2f2; border-bottom:1px solid #ccc;}
+ .lhny a{font-size:12px; color:#000; line-height:34px;}
+ .shaoerd{margin-top:0;}
+ .sdb{margin-top:41px; height:397px;}
+ .dinyue{width:180px; height:324px; margin-top:25px; background:#f2f2f2;}
+ .dinyuej{width:150px; height:66px; margin-top:10px; margin-left:10px;}
+.dinyuej a img{width:64px; height:64px; border:1px solid #ccc;}
+.dinyuejwz{width:70px; height:65px; margin-left:8px;}
+.dinyuejwz span{font-size:12px; color:#999999; line-height:21px;}
+.dinyuejwz .wzx{color:#000;}
+.dinyuejwz a{font-size:12px; color:#fff; width:68px; height:22px; text-align:center; line-height:22px; border-radius:5px; background:#699f00;}
+.hzhuob{width:978px; height:182px; background:#f7f7f7; margin-top:45px; border:1px solid #ccc;}
+.hzhuobs{width:489px; height:182px; border-right:1px solid #ccc;}
+.hztou{width:489px; height:46px; margin-top:10px;}
+.hztou h2{font-size:23px; color:#333333; margin-left:20px; line-height:46px;}
+.hztou a{font-size:11px; color:#333; margin:21px 0 0 16px;}
+.gzwan{width:60px; height:111px; margin-left:20px;}
+.gzwan a{font-size:11px; color:#333333; line-height:28px;}
+.hzhuobsd{border-right:none; width:480px;}
+.gsjs{width:980px; height:38px; border-top:1px solid #ccc; margin-top:50px; }
+.gsjas{width:829px; height:12px; margin-top:19px; margin-left:75px;}
+.gsjas a{padding:0 10px; border-left:1px solid #ccc; font-size:11px; color:#000;}
+.gsjas .gsssd{border-left:none;}
+.weifabul{width:480px; height:27px; margin-left:250px;}
+.weifabul span{font-size:12px; color:#000; line-height:27px;}
+.weifabul .donjijf{margin-right:40px; margin-left:40px;}
+.duanwei{font-size:12px; line-height:27px;}
+.bagxt:hover{box-shadow:0 0 20px #000; transform:scale(1.05); transition:all 1s ease-out;}
+.rxsc:hover{box-shadow:0 0 20px #000; transform:scale(1.05); transition:all 1s ease-out;}
+.today:hover{box-shadow:0 0 20px #000; transform:scale(1.05); transition:all 0.6s ease-out;}
+.zizhi2:hover{box-shadow:0 0 20px #000; transform:scale(1.05); transition:all 0.6s ease-out;}
+.runningmanx:hover{box-shadow:0 0 20px #000; transform:scale(1.05); transition:all 0.6s ease-out;}
+.prguang:hover{box-shadow:0 0 20px #000; transform:scale(1.05); transition:all 0.6s ease-out;}
+.dianyzqs:hover{box-shadow:0 0 20px #000; transform:scale(1.05); transition:all 0.6s ease-out;}
+.ydy:hover{box-shadow:0 0 20px #000; transform:scale(1.05); transition:all 0.6s ease-out;}
+.luhan:hover{box-shadow:0 0 20px #000; transform:scale(1.05); transition:all 0.6s ease-out;}
+.dinyuej:hover{box-shadow:0 0 20px #000; transform:scale(1.05); transition:all 0.6s ease-out;}
+.wdbfjl a{color:#80B30C;}
+</style>
+</head>
+
+<body>
+<!--head-->
+	<div class="w clearfix">
+    	<div class="fl helin clearfix">
+        	<a href="#" class="fl helin2 clearfix">
+        		<img src="img/mogu.jpg" class="fl"/>
+            </a>
+            <div class="fl clearfix dahsg">
+            	<input type="text" placeholder="大好时光" class="fl"/>
+                <a href="#" class="fl sousuo"></a>
+            </div>
+            <ul class="fl denlu clearfix">
+            	<li class="fl clearfix">
+                	<a href="#" class="fl">登陆</a>
+                </li>
+            	<li class="fl clearfix">
+                	<a href="#" class="fl">注册</a>
+                </li>
+            	<li class="fl clearfix">
+                	<a href="#" class="fl">开通ViP </a>
+                </li>
+            	<li class="fl clearfix shangc">
+                	<i class="fl"></i>
+                	<a href="#" class="fl">上传</a>
+                    <span class="fl"></span>
+                    <p class="fl"></p>
+                </li>
+            	<li class="fl clearfix shangc">
+                	<a href="#" class="fl">上传</a>
+                    <p class="fl xiazai"></p>
+                </li>
+            	<li class="fl clearfix shangc">
+                	<a href="#" class="fl">消息</a>
+                    <span class="fl"></span>
+                </li>
+            	<li class="fl clearfix shangc">
+                	<a href="#" class="fl">播放记录</a>
+                    <span class="fl"></span>
+                </li>
+            </ul>
+            <div class="fl clearfix beishang">
+            	<img src="img/site-focuslist_bg.png"/>
+            	<ul class="fl clearfix beishang2">
+                	<li class="fl clearfix">
+                    	<a href="#" class="dl">大河复古俄方将覆盖共和国发生</a>
+                    </li>
+                	<li class="fl clearfix">
+                    	<a href="#" class="dl">大河复古俄方将覆盖共和国发生</a>
+                    </li>
+                	<li class="fl clearfix">
+                    	<a href="#" class="dl">大河复古俄方将覆盖共和国发生</a>
+                    </li>
+                	<li class="fl clearfix">
+                    	<a href="#" class="dl">大河复古俄方将覆盖共和国发生</a>
+                    </li>
+                	<li class="fl clearfix">
+                    	<a href="#" class="dl">大河复古俄方将覆盖共和国发生</a>
+                    </li>
+                	<li class="fl clearfix">
+                    	<a href="#" class="dl">大河复古俄方将覆盖共和国发生</a>
+                    </li>
+                	<li class="fl clearfix">
+                    	<a href="#" class="dl">大河复古俄方将覆盖共和国发生</a>
+                    </li>
+                	<li class="fl clearfix">
+                    	<a href="#" class="dl">大河复古俄方将覆盖共和国发生</a>
+                    </li>
+                	<li class="fl clearfix">
+                    	<a href="#" class="dl">大河复古俄方将覆盖共和国发生</a>
+                    </li>
+                	<li class="fl clearfix">
+                    	<a href="#" class="dl">大河复古俄方将覆盖共和国发生</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<!--导航-->
+	<div class="w beijsh clearfix">
+    	<div class="fl clearfix daohang">
+        	<a href="#" class="logo fl clearfix">
+            	<h1 class="fl">爱奇异</h1>
+                <i class="fl"></i>
+            </a>
+            <ul class="fl clearfix dhaohz">
+            	<li class="fl wule clearfix">
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                </li>
+                <li class="fl clearfix dianying">
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                </li>
+                <li class="fl clearfix donman">
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                </li>
+                <li class="fl clearfix donman">
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                </li>
+                <li class="fl clearfix dianying">
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                	<a href="#" class="fl">娱乐</a>
+                </li>
+                <li class="fl clearfix fyunb">
+                	<a href="#" class="fl">娱乐娱乐</a>
+                	<a href="#" class="fl">娱乐娱乐</a>
+                	<a href="#" class="fl">娱乐娱乐</a>
+                	<a href="#" class="fl">娱乐娱乐</a>
+                	<a href="#" class="fl">娱乐娱乐</a>
+                	<a href="#" class="fl">娱乐娱乐</a>
+                </li>
+                <li class="fl clearfix pps">
+                	<a href="#" class="fl">娱乐娱乐</a>
+                	<a href="#" class="fl">娱乐娱乐</a>
+                	<a href="#" class="fl">娱乐娱乐</a>
+                	<a href="#" class="fl">娱乐娱乐</a>
+                	<a href="#" class="fl clearfix">娱乐娱乐<span class="fl"></span></a>
+                	<a href="#" class="fl clearfix">娱乐娱乐<span class="fl"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+<!--今日焦点-->
+	<div class="w clearfix jirjiaod">
+    	<div class="fl clearfix jdtouz">
+            <div class="fl jdtou">
+                <h2 class="fl">今日焦点</h2>
+                <a href="#" class="fl gd">更多》</a>
+                <a href="#" class="fr dubo">独播</a>
+            </div>
+            <ul class="fl clearfix xinwdh">
+                <li class="fl xinwdh2 clearfix">
+                    <a href="#" class="fl shuji">霹雳吧啦霹雳霹雳吧啦霹雳吧啦霹雳吧啦</a>
+                </li>
+                <li class="fl clearfix xinwdhx">
+                	<a href="#" class="fl xinwdhx2 clearfix">
+                    	<i class="fl"></i>
+                        <span class="fl">霹雳吧啦霹霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳</span>
+                    </a>
+                </li>
+                <li class="fl clearfix xinwdhx">
+                	<a href="#" class="fl xinwdhx2 clearfix">
+                    	<i class="fl"></i>
+                        <span class="fl">霹雳吧啦霹霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳</span>
+                    </a>
+                </li>
+                <li class="fl clearfix xinwdhx">
+                	<a href="#" class="fl xinwdhx2 clearfix">
+                    	<i class="fl"></i>
+                        <span class="fl">霹雳吧啦霹霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳</span>
+                    </a>
+                </li>
+                <li class="fl clearfix xinwdhx">
+                	<a href="#" class="fl xinwdhx2 clearfix">
+                    	<i class="fl"></i>
+                        <span class="fl">霹雳吧啦霹霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳</span>
+                    </a>
+                </li>
+                <li class="fl clearfix xinwdhx">
+                	<a href="#" class="fl xinwdhx2 clearfix">
+                    	<i class="fl"></i>
+                        <span class="fl">霹雳吧啦霹霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳</span>
+                    </a>
+                </li>
+                <li class="fl clearfix xinwdhx">
+                	<a href="#" class="fl xinwdhx2 clearfix">
+                    	<i class="fl"></i>
+                        <span class="fl">霹雳吧啦霹霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳</span>
+                    </a>
+                </li>
+                <li class="fl clearfix rxsc">
+                	<a href="#" class="fl">
+                    	<img src="img/saiche.png"/>
+                    </a>
+                    <a class="fl rxsc2">任性赛车就是任性</a>
+                </li>
+                <li class="fl clearfix rxsc rxscc">
+                	<a href="#" class="fl">
+                    	<img src="img/saiche.png"/>
+                    </a>
+                    <a class="fl rxsc2">任性赛车就是任性</a>
+                </li>
+            </ul>
+         </div>
+        <ul class="fl clearfix dxtan">
+            	<li class="fl bagxt clearfix">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzhil.jpg"/>
+                    </a>
+                    <div class="fl clearfix quanzil"></div>
+                    <div class="fl clearfix quanzil2">
+                    	<i class="fl"></i>
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜呜</span>
+             		 </div>
+                </li>
+                <li class="fl clearfix xinwdhx xinwdhxc">
+                	<a href="#" class="fl xinwdhx2 clearfix">
+                    	<i class="fl"></i>
+                        <span class="fl">霹雳吧啦霹霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳</span>
+                    </a>
+                </li>
+                <li class="fl clearfix xinwdhx">
+                	<a href="#" class="fl xinwdhx2 clearfix">
+                    	<i class="fl"></i>
+                        <span class="fl">霹雳吧啦霹霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳</span>
+                    </a>
+                </li>
+                <li class="fl clearfix xinwdhx">
+                	<a href="#" class="fl xinwdhx2 clearfix">
+                    	<i class="fl"></i>
+                        <span class="fl">霹雳吧啦霹霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳</span>
+                    </a>
+                </li>
+                <li class="fl clearfix xinwdhx">
+                	<a href="#" class="fl xinwdhx2 clearfix">
+                    	<i class="fl"></i>
+                        <span class="fl">霹雳吧啦霹霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳</span>
+                    </a>
+                </li>
+                <li class="fl clearfix xinwdhx">
+                	<a href="#" class="fl xinwdhx2 clearfix">
+                    	<i class="fl"></i>
+                        <span class="fl">霹雳吧啦霹霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳吧啦霹雳</span>
+                    </a>
+                </li>
+            </ul>
+        <ul class="fl clearfix caiyan">
+        	<li class="fl clearfix rxsc">
+                	<a href="#" class="fl">
+                    	<img src="img/saiche.png"/>
+                    </a>
+                    <a class="fl rxsc2">任性赛车就是任性</a>
+                </li>
+            <li class="fl clearfix rxsc rxsce">
+                	<a href="#" class="fl">
+                    	<img src="img/saiche.png"/>
+                    </a>
+                    <a class="fl rxsc2">任性赛车就是任性</a>
+                </li>
+            <li class="fl clearfix rxsc rxsce">
+                	<a href="#" class="fl">
+                    	<img src="img/saiche.png"/>
+                    </a>
+                    <a class="fl rxsc2">任性赛车就是任性</a>
+                </li>
+        </ul>    
+    </div>
+<!--综艺--> 
+	<div class="w clearfix">
+    			<div class="fl zhongyi clearfix">
+        	<div class="fl zhongyitou clearfix">
+            	<div class="fl zhongyitou2 clearfix">
+                    <i class="fl"></i>
+                    <h2 class="fl">综艺</h2>
+                    <a href="#" class="fl duod">更多》</a>
+            	</div>
+                <div class="fl clearfix ascaom">
+                	<a href="#" class="fl">爱上超模第二2季</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">爱上超模</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">爱上超模第</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">爱上超模</a>
+                </div>
+                <span class="fr reke">
+                	<img src="img/hxrk.png"/>
+                </span>
+            </div>
+            <div class="fl today clearfix">
+            	<a href="#" class="fl">
+                	<img src="img/quanzl2.jpg"/>
+                </a>
+                <i class="fl"></i>
+                <span class="fl"></span>
+                <p class="fl qxdu">1080p</p>
+                <p class="fl rqi">1080p</p>
+                <div class="fl fsnht">
+                	<p class="huitan">非首脑会谈</p>
+                	<p>非首脑会谈非首脑会谈非首脑会谈非首脑会谈非首脑会谈非</p>
+                </div>
+            </div>
+            <ul class="fl clearfix zizhi">
+            	<li class="fl zizhi2 clearfix">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <span class="fl qxds"></span>
+                    <span class="fl qxds2">1080p</span>
+                    <div class="fl liuxw">
+                    	<p>嘟嘟嘟嘟</p>
+                    	<p>嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟</p>
+                    </div>
+                </li>
+            	<li class="fl zizhi2 clearfix zizhi3">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <span class="fl qxds"></span>
+                    <span class="fl qxds2">1080p</span>
+                    <div class="fl liuxw">
+                    	<p>嘟嘟嘟嘟</p>
+                    	<p>嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟</p>
+                    </div>
+                </li>
+            	<li class="fl zizhi2 clearfix zizhig">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <span class="fl qxds"></span>
+                    <span class="fl qxds2">1080p</span>
+                    <div class="fl liuxw">
+                    	<p>嘟嘟嘟嘟</p>
+                    	<p>嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟</p>
+                    </div>
+                </li>
+            	<li class="fl zizhi2 clearfix zizhi3 zizhig">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <span class="fl qxds"></span>
+                    <span class="fl qxds2">1080p</span>
+                    <div class="fl liuxw">
+                    	<p>嘟嘟嘟嘟</p>
+                    	<p>嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+            	<div class="fr zhongyitou2 clearfix zhongyw zysg">
+                    <i class="fl"></i>
+                    <h2 class="fl">精彩推荐</h2>
+                    <a href="#" class="fl duod">更多》</a>
+            	</div>
+                <a href="#" class="fr xeniii">
+                	<img src="img/quanzhil.jpg"/>
+                </a>
+                <ul class="ggunj fr clearfix">
+                	<li class="fl ggei">
+                    	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵呵呵呵</a>
+                    </li>
+                    <li class="fl qiaozy clearfix">
+                    	<i class="fl"></i>
+                    	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵</a>
+                    </li>
+                    <li class="fl qiaozy clearfix">
+                    	<i class="fl"></i>
+                    	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵</a>
+                    </li>
+                    <li class="fl qiaozy clearfix">
+                    	<i class="fl"></i>
+                    	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵</a>
+                    </li>
+                    <li class="fl qiaozy clearfix">
+                    	<i class="fl"></i>
+                    	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵</a>
+                    </li>
+                    <li class="fl qiaozy clearfix">
+                    	<i class="fl"></i>
+                    	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵</a>
+                    </li>
+                </ul>
+    </div>
+<!--runningman-->
+	<div class="w clearfix">
+    	<div class="benbaoxd fl clearfix">
+        	<h2 class="fl">奔跑吧兄弟第三季</h2>
+            <span class="fl dubod">独播</span>
+            <a href="#" class="fl">进入专题》</a>
+        </div>
+        <ul class="fl runningman clearfix">
+        	<li class="fl clearfix runningmanx">
+            	<a href="#" class="fl clearfix runningmanx2">
+                	<img src="img/quanzl4.jpg" class="fl"/>
+                    <span class="fl qxdq"></span>
+                    <span class="fl qxdq2">1080p</span>
+                    <i class="fl"></i>
+                    <span class="fl qxdqa"></span>
+                    <span class="fl qxdqa2">11-06期</span>
+                </a>
+                <div class="fl clearfix zphgu">
+                	<a href="#" class="fl">正片回顾</a>
+                    <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                </div>
+            </li>
+        	<li class="fl clearfix runningmanx runningmanc">
+            	<a href="#" class="fl clearfix runningmanx2">
+                	<img src="img/quanzl4.jpg" class="fl"/>
+                    <span class="fl qxdq"></span>
+                    <span class="fl qxdq2">1080p</span>
+                    <i class="fl"></i>
+                    <span class="fl qxdqa"></span>
+                    <span class="fl qxdqa2">11-06期</span>
+                </a>
+                <div class="fl clearfix zphgu">
+                	<a href="#" class="fl">正片回顾</a>
+                    <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                </div>
+            </li>
+        	<li class="fl clearfix runningmanx runningmanc">
+            	<a href="#" class="fl clearfix runningmanx2">
+                	<img src="img/quanzl4.jpg" class="fl"/>
+                    <span class="fl qxdq"></span>
+                    <span class="fl qxdq2">1080p</span>
+                    <i class="fl"></i>
+                    <span class="fl qxdqa"></span>
+                    <span class="fl qxdqa2">11-06期</span>
+                </a>
+                <div class="fl clearfix zphgu">
+                	<a href="#" class="fl">正片回顾</a>
+                    <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                </div>
+            </li>
+        	<li class="fl clearfix runningmanx runningmanc">
+            	<a href="#" class="fl clearfix runningmanx2">
+                	<img src="img/quanzl4.jpg" class="fl"/>
+                    <span class="fl qxdq"></span>
+                    <span class="fl qxdq2">1080p</span>
+                    <i class="fl"></i>
+                    <span class="fl qxdqa"></span>
+                    <span class="fl qxdqa2">11-06期</span>
+                </a>
+                <div class="fl clearfix zphgu">
+                	<a href="#" class="fl">正片回顾</a>
+                    <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                </div>
+            </li>
+        	<li class="fl clearfix runningmanx runningmanc">
+            	<a href="#" class="fl clearfix runningmanx2">
+                	<img src="img/quanzl4.jpg" class="fl"/>
+                    <span class="fl qxdq"></span>
+                    <span class="fl qxdq2">1080p</span>
+                    <i class="fl"></i>
+                    <span class="fl qxdqa"></span>
+                    <span class="fl qxdqa2">11-06期</span>
+                </a>
+                <div class="fl clearfix zphgu">
+                	<a href="#" class="fl">正片回顾</a>
+                    <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                </div>
+            </li>
+        </ul>
+        <a href="#" class="fl guangao">
+        	<img src="img/guangao.png"/>
+        </a>
+    </div>
+<!--猜你喜欢-->
+	<div class="w clearfix">
+    	<div class="fl clearfix cnxih">
+        	<div class="fl cnxihtou clearfix">
+            	<i class="fl"></i>
+                <h2 class="fl">猜你喜欢</h2>
+                <a href="#" class="fl gdhh">更多》</a> 
+                <div class="fl wdbfjl clearfix">
+                	<a href="#" class="fl">我的播放记录</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">我的播放</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">我的播放</a>
+                </div>
+            </div>
+            <ul class="fl runningman clearfix">
+                <li class="fl clearfix runningmanx">
+                    <a href="#" class="fl clearfix runningmanx2 rman">
+                        <img src="img/lufu.jpg" class="fl"/>
+                        <span class="fl qxdq"></span>
+                        <span class="fl qxdq2">1080p</span>
+                        <i class="fl"></i>
+                        <span class="fl qxdqa"></span>
+                        <span class="fl qxdqa2">11-06期</span>
+                        <span class="fl vip"></span>
+                    </a>
+                    <div class="fl clearfix zphgu">
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                    </div>
+                </li>
+                <li class="fl clearfix runningmanx runningmanc">
+                    <a href="#" class="fl clearfix runningmanx2 rman">
+                        <img src="img/lufu.jpg" class="fl"/>
+                        <span class="fl qxdq"></span>
+                        <span class="fl qxdq2">1080p</span>
+                        <i class="fl"></i>
+                        <span class="fl qxdqa"></span>
+                        <span class="fl qxdqa2">11-06期</span>
+                        <span class="fl mianfei"></span>
+                    </a>
+                    <div class="fl clearfix zphgu">
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                    </div>
+                </li>
+                <li class="fl clearfix runningmanx runningmanc">
+                    <a href="#" class="fl clearfix runningmanx2">
+                        <img src="img/lufu.jpg" class="fl"/>
+                        <span class="fl qxdq"></span>
+                        <span class="fl qxdq2">1080p</span>
+                        <i class="fl"></i>
+                        <span class="fl qxdqa"></span>
+                        <span class="fl qxdqa2">11-06期</span>
+                    </a>
+                    <div class="fl clearfix zphgu">
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                    </div>
+                </li>
+                <li class="fl clearfix runningmanx runningmanc">
+                    <a href="#" class="fl clearfix runningmanx2 rman">
+                        <img src="img/lufu.jpg" class="fl"/>
+                        <span class="fl qxdq"></span>
+                        <span class="fl qxdq2">1080p</span>
+                        <i class="fl"></i>
+                        <span class="fl qxdqa"></span>
+                        <span class="fl qxdqa2">11-06期</span>
+                        <span class="fl vip"></span>
+                    </a>
+                    <div class="fl clearfix zphgu">
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                    </div>
+                </li>
+                <li class="fl clearfix runningmanx runningmanc">
+                    <a href="#" class="fl clearfix runningmanx2">
+                        <img src="img/lufu.jpg" class="fl"/>
+                        <span class="fl qxdq"></span>
+                        <span class="fl qxdq2">1080p</span>
+                        <i class="fl"></i>
+                        <span class="fl qxdqa"></span>
+                        <span class="fl qxdqa2">11-06期</span>
+                    </a>
+                    <div class="fl clearfix zphgu">
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                    </div>
+                </li>
+                <li class="fl clearfix runningmanx rim">
+                    <a href="#" class="fl clearfix runningmanx2 rman">
+                        <img src="img/lufu.jpg" class="fl"/>
+                        <span class="fl qxdq"></span>
+                        <span class="fl qxdq2">1080p</span>
+                        <i class="fl"></i>
+                        <span class="fl qxdqa"></span>
+                        <span class="fl qxdqa2">11-06期</span>
+                        <span class="fl mianfei"></span>
+                    </a>
+                    <div class="fl clearfix zphgu">
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                    </div>
+                </li>
+                <li class="fl clearfix runningmanx runningmanc rim">
+                    <a href="#" class="fl clearfix runningmanx2">
+                        <img src="img/lufu.jpg" class="fl"/>
+                        <span class="fl qxdq"></span>
+                        <span class="fl qxdq2">1080p</span>
+                        <i class="fl"></i>
+                        <span class="fl qxdqa"></span>
+                        <span class="fl qxdqa2">11-06期</span>
+                    </a>
+                    <div class="fl clearfix zphgu">
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                    </div>
+                </li>
+                <li class="fl clearfix runningmanx runningmanc rim">
+                    <a href="#" class="fl clearfix runningmanx2 rman">
+                        <img src="img/lufu.jpg" class="fl"/>
+                        <span class="fl qxdq"></span>
+                        <span class="fl qxdq2">1080p</span>
+                        <i class="fl"></i>
+                        <span class="fl qxdqa"></span>
+                        <span class="fl qxdqa2">11-06期</span>
+                        <span class="fl vip"></span>
+                    </a>
+                    <div class="fl clearfix zphgu">
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                    </div>
+                </li>
+                <li class="fl clearfix runningmanx runningmanc rim">
+                    <a href="#" class="fl clearfix runningmanx2">
+                        <img src="img/lufu.jpg" class="fl"/>
+                        <span class="fl qxdq"></span>
+                        <span class="fl qxdq2">1080p</span>
+                        <i class="fl"></i>
+                        <span class="fl qxdqa"></span>
+                        <span class="fl qxdqa2">11-06期</span>
+                    </a>
+                    <div class="fl clearfix zphgu">
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                        <span class="fl">呜呜呜呜呜呜呜呜呜呜呜</span>
+                    </div>
+                </li>
+                <li class="fl clearfix runningmanx runningmanc grzx rim">
+                	<a href="#" class="fl">进入个人中心></a>
+                </li>
+       		 </ul>
+        </div>
+    </div>
+<!--推荐广告-->
+	<div class="w clearfix">
+    <div class="fl clearfix tuijianggc">
+    	<ul class="tuijiangg fl clearfix">
+        	<li class="fl clearfix prguang">
+            	<a href="#" class="fl prou">
+                	<img src="img/quanzhilong.jpg"/>
+                </a>
+                <div class="fl prguang2 clearfix">
+                	<a href="#" class="fl">
+                    	<img src="img/guang1.png"/>
+                    </a>
+                </div>
+            </li>
+        	<li class="fl clearfix prguang prguangm">
+            	<a href="#" class="fl prou">
+                	<img src="img/quanzhilong.jpg"/>
+                </a>
+                <div class="fl prguang2 clearfix">
+                	<a href="#" class="fl">
+                    	<img src="img/guang1.png"/>
+                    </a>
+                </div>
+            </li>
+        	<li class="fl clearfix prguang prguangm">
+            	<a href="#" class="fl prou">
+                	<img src="img/quanzhilong.jpg"/>
+                </a>
+                <div class="fl prguang2 clearfix">
+                	<a href="#" class="fl">
+                    	<img src="img/guang1.png"/>
+                    </a>
+                </div>
+            </li>
+        	<li class="fl clearfix prguang prguangm">
+            	<a href="#" class="fl prou">
+                	<img src="img/quanzhilong.jpg"/>
+                </a>
+                <div class="fl prguang2 clearfix">
+                	<a href="#" class="fl">
+                    	<img src="img/guang1.png"/>
+                    </a>
+                </div>
+            </li>
+        	<li class="fl clearfix prguang prguangm">
+            	<a href="#" class="fl prou">
+                	<img src="img/quanzhilong.jpg"/>
+                </a>
+                <div class="fl prguang2 clearfix">
+                	<a href="#" class="fl">
+                    	<img src="img/guang1.png"/>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <span class="fl ggdw">推荐广告</span>
+        <span class="fl youjt"></span>
+        <span class="fl youjt2"></span>
+    </div>
+    </div>
+<!--电影-->
+	<div class="w clearfix">
+    	<div class="fl clearfix dianyzq">
+    		<div class="fl zhongyitou clearfix">
+            	<div class="fl zhongyitou2 clearfix">
+                    <i class="fl"></i>
+                    <h2 class="fl">电影</h2>
+                    <a href="#" class="fl duod">更多》</a>
+            	</div>
+                <div class="fl clearfix ascaom">
+                	<a href="#" class="fl">爱上超模第二2季</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">爱上超模</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">爱上超模第</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">爱上超模</a>
+                </div>
+            </div>
+            <ul class="fl clearfix">
+            	<li class="fl clearfix  dianyzqs">
+                	<a href="#" class="fl">
+                    	<img src="img/yewen.png"/>
+                    </a>
+                    <span class="fl zizhigq"></span>
+                    <span class="fl p80p"></span>
+                    <span class="fl p80p2">1080p</span>
+                    <div class="fl beitai clearfix">
+                    	<span class="fl fanji">亲亲亲亲亲亲亲亲</span>
+                    	<span class="fl">亲亲亲亲亲亲亲亲亲亲亲亲亲亲</span>
+                    </div>
+                </li>
+            	<li class="fl clearfix  dianyzqs dianyzqsb">
+                	<a href="#" class="fl">
+                    	<img src="img/yewen.png"/>
+                    </a>
+                    <span class="fl zizhigq"></span>
+                    <span class="fl p80p"></span>
+                    <span class="fl p80p2">1080p</span>
+                    <div class="fl beitai clearfix">
+                    	<span class="fl fanji">亲亲亲亲亲亲亲亲</span>
+                    	<span class="fl">亲亲亲亲亲亲亲亲亲亲亲亲亲亲</span>
+                    </div>
+                </li>
+            	<li class="fl clearfix  dianyzqs dianyzqsb">
+                	<a href="#" class="fl">
+                    	<img src="img/yewen.png"/>
+                    </a>
+                    <span class="fl zizhigq"></span>
+                    <span class="fl p80p"></span>
+                    <span class="fl p80p2">1080p</span>
+                    <div class="fl beitai clearfix">
+                    	<span class="fl fanji">亲亲亲亲亲亲亲亲</span>
+                    	<span class="fl">亲亲亲亲亲亲亲亲亲亲亲亲亲亲</span>
+                    </div>
+                </li>
+            	<li class="fl clearfix  dianyzqs dianyzqsb">
+                	<a href="#" class="fl">
+                    	<img src="img/yewen.png"/>
+                    </a>
+                    <span class="fl zizhigq"></span>
+                    <span class="fl p80p"></span>
+                    <span class="fl p80p2">1080p</span>
+                    <div class="fl beitai clearfix">
+                    	<span class="fl fanji">亲亲亲亲亲亲亲亲</span>
+                    	<span class="fl">亲亲亲亲亲亲亲亲亲亲亲亲亲亲</span>
+                    </div>
+                </li>
+            	<li class="fl clearfix  dianyzqs dianyzqss">
+                	<a href="#" class="fl">
+                    	<img src="img/yewen.png"/>
+                    </a>
+                    <span class="fl zizhigq"></span>
+                    <span class="fl p80p"></span>
+                    <span class="fl p80p2">1080p</span>
+                    <div class="fl beitai clearfix">
+                    	<span class="fl fanji">亲亲亲亲亲亲亲亲</span>
+                    	<span class="fl">亲亲亲亲亲亲亲亲亲亲亲亲亲亲</span>
+                    </div>
+                </li>
+            	<li class="fl clearfix  dianyzqs dianyzqsb dianyzqss">
+                	<a href="#" class="fl">
+                    	<img src="img/yewen.png"/>
+                    </a>
+                    <span class="fl zizhigq"></span>
+                    <span class="fl p80p"></span>
+                    <span class="fl p80p2">1080p</span>
+                    <div class="fl beitai clearfix">
+                    	<span class="fl fanji">亲亲亲亲亲亲亲亲</span>
+                    	<span class="fl">亲亲亲亲亲亲亲亲亲亲亲亲亲亲</span>
+                    </div>
+                </li>
+            	<li class="fl clearfix  dianyzqs dianyzqsb dianyzqss">
+                	<a href="#" class="fl">
+                    	<img src="img/yewen.png"/>
+                    </a>
+                    <span class="fl zizhigq"></span>
+                    <span class="fl p80p"></span>
+                    <span class="fl p80p2">1080p</span>
+                    <div class="fl beitai clearfix">
+                    	<span class="fl fanji">亲亲亲亲亲亲亲亲</span>
+                    	<span class="fl">亲亲亲亲亲亲亲亲亲亲亲亲亲亲</span>
+                    </div>
+                </li>
+            	<li class="fl clearfix  dianyzqs dianyzqsb dianyzqss">
+                	<a href="#" class="fl">
+                    	<img src="img/yewen.png"/>
+                    </a>
+                    <span class="fl zizhigq"></span>
+                    <span class="fl p80p"></span>
+                    <span class="fl p80p2">1080p</span>
+                    <div class="fl beitai clearfix">
+                    	<span class="fl fanji">亲亲亲亲亲亲亲亲</span>
+                    	<span class="fl">亲亲亲亲亲亲亲亲亲亲亲亲亲亲</span>
+                    </div>
+                </li>
+            </ul> 
+    	</div>
+        	<div class="fr dianypan clearfix">
+            	<div class="fr zhongyitou2 clearfix zhongyw">
+                    <i class="fl"></i>
+                    <h2 class="fl">电影榜</h2>
+                    <a href="#" class="fl duod">更多》</a>
+            	</div>
+                <ul class="fl dypaih clearfix">
+                	<li  class="fl dsxs clearfix">
+                    	<span class="fl">1</span>
+                        <a href="#" class="fl">道士下山</a>
+                        <i class="fr"></i>
+                    </li>
+                	<li  class="fl dsxs clearfix dsxss">
+                    	<span class="fl">2</span>
+                        <a href="#" class="fl">道士下山</a>
+                        <i class="fr"></i>
+                    </li>
+                	<li  class="fl dsxs clearfix dsxss dsxssz">
+                    	<span class="fl">3</span>
+                        <a href="#" class="fl">道士下山</a>
+                        <i class="fr"></i>
+                    </li>
+                	<li  class="fl dsxs clearfix dsxss dsxssx dsxssx1">
+                    	<span class="fl">4</span>
+                        <a href="#" class="fl">道士下山</a>
+                        <i class="fr"></i>
+                    </li>
+                	<li  class="fl dsxs clearfix dsxss dsxssx dsxssx1">
+                    	<span class="fl">5</span>
+                        <a href="#" class="fl">道士下山</a>
+                        <i class="fr"></i>
+                    </li>
+                	<li  class="fl dsxs clearfix dsxss dsxssx dsxssx1">
+                    	<span class="fl">6</span>
+                        <a href="#" class="fl">道士下山</a>
+                        <i class="fr"></i>
+                    </li>
+                	<li  class="fl dsxs clearfix dsxss dsxssx dsxssx1">
+                    	<span class="fl">7</span>
+                        <a href="#" class="fl">道士下山</a>
+                        <i class="fr"></i>
+                    </li>
+                	<li  class="fl dsxs clearfix dsxss dsxssx dsxssx1">
+                    	<span class="fl">8</span>
+                        <a href="#" class="fl">道士下山</a>
+                        <i class="fr"></i>
+                    </li>
+                	<li  class="fl dsxs clearfix dsxss dsxssx dsxssx1">
+                    	<span class="fl">9</span>
+                        <a href="#" class="fl">道士下山</a>
+                        <i class="fr"></i>
+                    </li>
+                </ul> 
+                
+    		</div><div class="fl clearfix  dianyzqs dianyzqsb dianyzqss dss">
+                	<a href="#" class="fl">
+                    	<img src="img/yewen.png"/>
+                    </a>
+                    <span class="fl zizhigq"></span>
+                    <span class="fl p80p"></span>
+                    <span class="fl p80p2">1080p</span>
+                    <div class="fl beitai clearfix">
+                    	<span class="fl fanji">亲亲亲亲亲亲亲亲</span>
+                    	<span class="fl">亲亲亲亲亲亲亲亲亲亲亲亲亲亲</span>
+                    </div>
+                </div>
+    </div>
+<!--动漫-->
+	<div class="w clearfix">
+    <div class="fl clearfix haizw">
+    	<div class="fl clearfix donmantou">
+            	<div class="fl zhongyitou2 clearfix">
+                    <i class="fl"></i>
+                    <h2 class="fl">动漫</h2>
+                    <a href="#" class="fl duod">更多》</a>
+            	</div>
+                <div class="fl clearfix ascaom">
+                	<a href="#" class="fl">火影忍者疾风传</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">奥特吗</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">海贼王</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">七龙珠</a>
+                </div>
+        </div>
+        <div class="fl today clearfix todayj">
+            	<a href="#" class="fl">
+                	<img src="img/haizeiw.jpg"/>
+                </a>
+                <i class="fl"></i>
+                <span class="fl"></span>
+                <p class="fl qxdu qxdud">1080p</p>
+                <p class="fl rqi rqid">1080p</p>
+                <div class="fl fsnht fsnhtx">
+                	<p>非首脑会谈非首脑会谈非首脑会谈非首脑会谈非首脑会谈非</p>
+                </div>
+            </div>       
+        <div class="fl zizhi2 clearfix zizhiw">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <span class="fl qxds"></span>
+                    <span class="fl qxds2">1080p</span>
+                    <div class="fl liuxw liuxwd">
+                    	<p>嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟</p>
+                    </div>
+                </div>
+        <div class="fl zizhi2 clearfix zizhi3 zizhif">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <span class="fl qxds"></span>
+                    <span class="fl qxds2">1080p</span>
+                    <div class="fl liuxw liuxww">
+                    	<p>嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟</p>
+                    </div>
+                </div>
+      </div>
+    <div class="fl shaoer clearfix">
+            	<div class="fr zhongyitou2 clearfix zhongyw zhongyw2">
+                    <i class="fl"></i>
+                    <h2 class="fl">少儿</h2>
+                    <a href="#" class="fl duod">更多》</a>
+            	</div>
+        <ul class="fl clearfix caiyan caiyanff">
+            <li class="fl clearfix rxsc rxsce rxsceg">
+                	<a href="#" class="fl">
+                    	<img src="img/haizw.jpg"/>
+                    </a>
+                    <a class="fl rxsc2">嘿嘿嘿嘿嘿嘿嘿</a>
+                </li>
+            <li class="fl clearfix rxsc rxsce">
+                	<a href="#" class="fl">
+                    	<img src="img/haizeiw.jpg"/>
+                    </a>
+                    <a class="fl rxsc2">嘿嘿嘿嘿嘿嘿嘿</a>
+                </li>
+        </ul>    
+    </div> 
+    <div class="fl shaoer clearfix">
+        <div class="fr zhongyitou2 clearfix zhongyw zhongyw2">
+                    <i class="fl"></i>
+                    <h2 class="fl">教育</h2>
+                    <a href="#" class="fl duod">更多》</a>
+            	</div>
+        <ul class="fl clearfix caiyan caiyanff">
+            <li class="fl clearfix rxsc rxsce rxsceg">
+                	<a href="#" class="fl">
+                    	<img src="img/haizeiw.jpg"/>
+                    </a>
+                    <a class="fl rxsc2">任性赛车就是任性</a>
+                </li>
+            <li class="fl clearfix rxsc rxsce">
+                	<a href="#" class="fl">
+                    	<img src="img/haizw.jpg"/>
+                    </a>
+                    <a class="fl rxsc2">任性赛车就是任性</a>
+                </li>
+        </ul>    
+    </div>
+      </div>
+<!--体音时-->
+	<div class="w clearfix">
+    	<div class="fl clearfix tiys">
+        	<div class="tiyu fl clearfix">
+            	<div class="fl cnxihtou clearfix tiyutou">
+            	<i class="fl"></i>
+                <h2 class="fl">体育</h2>
+                <a href="#" class="fl gdhh">更多》</a> 
+                <div class="fl wdbfjl clearfix wdbfjldn">
+                	<a href="#" class="fl">我的播放记录</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">我的播放</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">我的播放</a>
+                </div>
+            </div>
+            	<ul class="fl clearfix tiyunx">
+                	<li class="fl clearfix ydy">
+                    	<a href="#" class="fl clearfix tysp">
+                        	<img src="img/quanzhilong.jpg" class="fl"/>
+                            <span class="fl tmdw"></span>
+                            <span class="fl tmdw2">1080p</span>
+                        </a>
+                        <div class="fl suan11">
+                        	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵呵</a>
+                        </div>
+                    </li>
+                	<li class="fl clearfix ydy ydyf">
+                    	<a href="#" class="fl clearfix tysp">
+                        	<img src="img/quanzhilong.jpg" class="fl"/>
+                            <span class="fl tmdw"></span>
+                            <span class="fl tmdw2">1080p</span>
+                        </a>
+                        <div class="fl suan11">
+                        	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵呵</a>
+                        </div>
+                    </li>
+                    <li class="fl clearfix ydy ydyq">
+                    	<a href="#" class="fl clearfix tysp">
+                        	<img src="img/quanzhilong.jpg" class="fl"/>
+                            <span class="fl tmdw"></span>
+                            <span class="fl tmdw2">1080p</span>
+                        </a>
+                        <div class="fl suan11">
+                        	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵呵</a>
+                        </div>
+                    </li>
+                	<li class="fl clearfix ydy ydyf ydyf1">
+                    	<a href="#" class="fl clearfix tysp">
+                        	<img src="img/quanzhilong.jpg" class="fl"/>
+                            <span class="fl tmdw"></span>
+                            <span class="fl tmdw2">1080p</span>
+                        </a>
+                        <div class="fl suan11">
+                        	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵呵</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        	<div class="tiyu fl clearfix yinyue">
+            	<div class="fl cnxihtou clearfix tiyutou">
+            	<i class="fl"></i>
+                <h2 class="fl">音乐</h2>
+                <a href="#" class="fl gdhh">更多》</a> 
+                <div class="fl wdbfjl clearfix wdbfjldn">
+                	<a href="#" class="fl">爱奇异音乐榜</a>
+                </div>
+            </div>
+            	<ul class="fl clearfix tiyunx">
+                	<li class="fl luhan clearfix">
+                    	<a href="#" class="fl quanzls clearfix">
+                        	<img src="img/quanzl4.jpg" class="fl"/>
+                            <span class="fl swtmsb"></span>
+                            <span class="fl swtmsb2">1080p</span>
+                        </a>
+                        <div class="fl clearfix lhny">
+                        	<a href="#" class="fl">的愚人节你祝福</a>
+                        </div>
+                    </li>
+                	<li class="fl clearfix ydy ydyf">
+                    	<a href="#" class="fl clearfix tysp">
+                        	<img src="img/quanzhilong.jpg" class="fl"/>
+                            <span class="fl tmdw"></span>
+                            <span class="fl tmdw2">1080p</span>
+                        </a>
+                        <div class="fl suan11">
+                        	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵呵</a>
+                        </div>
+                    </li>
+                	<li class="fl clearfix ydy ydyf ydyf1">
+                    	<a href="#" class="fl clearfix tysp">
+                        	<img src="img/quanzhilong.jpg" class="fl"/>
+                            <span class="fl tmdw"></span>
+                            <span class="fl tmdw2">1080p</span>
+                        </a>
+                        <div class="fl suan11">
+                        	<a href="#" class="fl">呵呵呵呵呵呵呵呵呵呵</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            	<div class="fl shaoer shaoerd clearfix">
+        			<div class="fr zhongyitou2 clearfix zhongyw zhongyw2">
+                    <i class="fl"></i>
+                    <h2 class="fl">教育</h2>
+                    <a href="#" class="fl duod">更多》</a>
+            	</div>
+       				 <ul class="fl clearfix caiyan caiyanff">
+            <li class="fl clearfix rxsc rxsce rxsceg">
+                	<a href="#" class="fl">
+                    	<img src="img/haizeiw.jpg"/>
+                    </a>
+                    <a class="fl rxsc2">任性赛车就是任性</a>
+                </li>
+            <li class="fl clearfix rxsc rxsce">
+                	<a href="#" class="fl">
+                    	<img src="img/haizw.jpg"/>
+                    </a>
+                    <a class="fl rxsc2">任性赛车就是任性</a>
+                </li>
+        </ul>    
+   				 </div>
+        </div>
+    </div>
+<!--原创-->
+	<div class="w">
+    	<div class="fl zhongyi clearfix">
+        	<div class="fl zhongyitou clearfix">
+            	<div class="fl zhongyitou2 clearfix">
+                    <i class="fl"></i>
+                    <h2 class="fl">原创</h2>
+                    <a href="#" class="fl duod">更多》</a>
+            	</div>
+                <div class="fl clearfix ascaom">
+                	<a href="#" class="fl">爱上超模第二2季</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">爱上超模</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">爱上超模第</a>
+                    <span class="fl"></span>
+                	<a href="#" class="fl">爱上超模</a>
+                </div>
+            </div>
+            <div class="fl today clearfix">
+            	<a href="#" class="fl">
+                	<img src="img/quanzl2.jpg"/>
+                </a>
+                <i class="fl"></i>
+                <span class="fl"></span>
+                <p class="fl qxdu">1080p</p>
+                <p class="fl rqi">1080p</p>
+                <div class="fl fsnht">
+                	<p class="huitan">非首脑会谈</p>
+                	<p>非首脑会谈非首脑会谈非首脑会谈非首脑会谈非首脑会谈非</p>
+                </div>
+            </div>
+            <ul class="fl clearfix zizhi">
+            	<li class="fl zizhi2 clearfix">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <span class="fl qxds"></span>
+                    <span class="fl qxds2">1080p</span>
+                    <div class="fl liuxw">
+                    	<p>嘟嘟嘟嘟</p>
+                    	<p>嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟</p>
+                    </div>
+                </li>
+            	<li class="fl zizhi2 clearfix zizhi3">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <span class="fl qxds"></span>
+                    <span class="fl qxds2">1080p</span>
+                    <div class="fl liuxw">
+                    	<p>嘟嘟嘟嘟</p>
+                    	<p>嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟</p>
+                    </div>
+                </li>
+            	<li class="fl zizhi2 clearfix zizhig">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <span class="fl qxds"></span>
+                    <span class="fl qxds2">1080p</span>
+                    <div class="fl liuxw">
+                    	<p>嘟嘟嘟嘟</p>
+                    	<p>嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟</p>
+                    </div>
+                </li>
+            	<li class="fl zizhi2 clearfix zizhi3 zizhig">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <span class="fl qxds"></span>
+                    <span class="fl qxds2">1080p</span>
+                    <div class="fl liuxw">
+                    	<p>嘟嘟嘟嘟</p>
+                    	<p>嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+       <div class="fl shaoer shaoerd clearfix sdb">
+        	<div class="fr zhongyitou2 clearfix zhongyw zhongyw2">
+                    <i class="fl"></i>
+                    <h2 class="fl">原创达人</h2>
+                    <a href="#" class="fl duod">更多》</a>
+            	</div> 
+             <ul class="fl clearfix dinyue" >
+             	<li class="fl clearfix dinyuej">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <div class="fl clearfix dinyuejwz">
+                    	<span class="fl wzx">呵呵呵呵呵</span>
+                        <span class="fl">2.59人订阅</span>
+                        <a href="#" class="fl">+ 订阅</a>
+                    </div>
+                </li>
+             	<li class="fl clearfix dinyuej">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <div class="fl clearfix dinyuejwz">
+                    	<span class="fl wzx">呵呵呵呵呵</span>
+                        <span class="fl">2.59人订阅</span>
+                        <a href="#" class="fl">+ 订阅</a>
+                    </div>
+                </li>
+             	<li class="fl clearfix dinyuej">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <div class="fl clearfix dinyuejwz">
+                    	<span class="fl wzx">呵呵呵呵呵</span>
+                        <span class="fl">2.59人订阅</span>
+                        <a href="#" class="fl">+ 订阅</a>
+                    </div>
+                </li>
+             	<li class="fl clearfix dinyuej">
+                	<a href="#" class="fl">
+                    	<img src="img/quanzl3.jpg"/>
+                    </a>
+                    <div class="fl clearfix dinyuejwz">
+                    	<span class="fl wzx">呵呵呵呵呵</span>
+                        <span class="fl">2.59人订阅</span>
+                        <a href="#" class="fl">+ 订阅</a>
+                    </div>
+                </li>
+             </ul>     
+   		</div>
+    </div>
+<!--合作伙伴-->
+	<div class="w clearfix">
+    	<div class="fl clearfix hzhuob">
+        	<ul class="fl clearfix hzhuobs">
+            	<li class="fl hztou clearfix">
+                	<h2 class="fl">合作伙伴</h2>
+                    <a href="#" class="fl">更多》</a>
+                </li>
+                	<li class="fl clearfix gzwan">
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    </li>
+                	<li class="fl clearfix gzwan">
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    </li>
+                	<li class="fl clearfix gzwan">
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    </li>
+                	<li class="fl clearfix gzwan">
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    </li>
+                	<li class="fl clearfix gzwan">
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    </li>
+            </ul>
+        	<ul class="fl clearfix hzhuobs hzhuobsd">
+            	<li class="fl hztou clearfix">
+                	<h2 class="fl">合作伙伴</h2>
+                    <a href="#" class="fl">更多》</a>
+                </li>
+                	<li class="fl clearfix gzwan">
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    </li>
+                	<li class="fl clearfix gzwan">
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    </li>
+                	<li class="fl clearfix gzwan">
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    </li>
+                	<li class="fl clearfix gzwan">
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    </li>
+                	<li class="fl clearfix gzwan">
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    	<a href="#" class="fl">智能电视网</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+<!--公司介绍-->
+	<div class="w clearfix">
+    	<div class="gsjs fl clearfix">
+        	<div class="fl clearfix gsjas">
+            	<a href="#" class="fl gsssd">公司介绍</a>
+            	<a href="#" class="fl">公司介绍</a>
+            	<a href="#" class="fl">公司介绍</a>
+            	<a href="#" class="fl">公司介绍</a>
+            	<a href="#" class="fl">公司介绍</a>
+            	<a href="#" class="fl">公司介绍</a>
+            	<a href="#" class="fl">公司介绍</a>
+            	<a href="#" class="fl">公司介绍</a>
+            	<a href="#" class="fl">公司介绍</a>
+            	<a href="#" class="fl">公司介绍</a>
+            	<a href="#" class="fl">公司介绍</a>
+            	<a href="#" class="fl">公司介绍</a>
+            </div>
+        </div>
+        <div class="fl clearfix weifabul">
+        	<span class="fl donjijf">冬季减肥护额发布会包产到</span>
+        	<span class="fl">冬季减肥护额发布会包产到</span>
+        </div>
+        <span class="fl duanwei">读互黑互的弧度呵护的独户和肚饿好肚饿蝴蝶护额好肚饿好肚饿的互动护额大户和读互黑互的弧度呵护的独户和肚饿好肚饿蝴蝶护额好肚饿好肚饿的互动护额大户和读互黑互的弧度呵护的独户和肚饿好肚饿蝴蝶护额好肚饿好肚饿的互动护额大户和</span>
+    </div>
+</body>
+</html>

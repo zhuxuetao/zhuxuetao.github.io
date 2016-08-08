@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0; padding:0; list-style:none;}
+        body{overflow:hidden;}
+        #prelude{width:300%; height:300%; background:orangered; position:absolute;  border-radius:50%;}
+        #box{width:400px; height:300px; border:1px solid #000; margin:100px auto; position:relative;
+        overflow:hidden; opacity:0;}
+        #box ul{width:1600px; height:300px; position:absolute; left:0; top:0; position:relative;}
+        #box li{width:400px; height:300px; float:left; position:absolute; left:400px; top:0;
+        font-size:30px; color:#fff; text-align:center; line-height:300px;}
+        #box img{width:400px; height:300px;}
+        #box a{width:50px; height:100px; background:#000; position:absolute; top:50%; margin-top:-50px;
+        z-index:1; color:#fff; text-align:center; line-height:100px; opacity:0.7;}
+        #box #left{left:0; border-radius:0 20px 20px 0;}
+        #box #right{right:0; border-radius:20px 0 0 20px;}
+        #div1{width:140px; height:20px; position:absolute; left:50%; bottom:10px; margin-left:-70px;}
+        #div1 span{width:20px; height:20px; background:#000; float:left; margin-right:10px; color:#fff;
+        text-align:center; line-height:20px;}
+        #div1 .show{background:red;}
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            var oUl=document.getElementById('ul1');
+            var aLi=oUl.children;
+            var oL=document.getElementById('left');
+            var oR=document.getElementById('right');
+            var oDiv=document.getElementById('div1');
+            var aS=oDiv.children;
+
+            var oPld=document.getElementById('prelude');
+
+            var w=oPld.offsetWidth;
+            var h=oPld.offsetHeight;
+
+            oPld.style.right=-w+'px';
+            oPld.style.top=-h+'px';
+            move(oPld,{right:-w/2,top:-h/2},{complete:function(){
+                move(oBox,{opacity:1});
+            }});
+
+            var iNow=0;
+            function next(){
+                move(aLi[iNow],{left:-400});
+                iNow++;
+                if(iNow==aLi.length)iNow=0;
+                aLi[iNow].style.left='400px';
+                move(aLi[iNow],{left:0});
+            }
+            function prev(){
+                move(aLi[iNow],{left:400});
+                iNow--;
+                if(iNow<0)iNow=aLi.length-1;
+                aLi[iNow].style.left='-400px';
+                move(aLi[iNow],{left:0});
+            }
+            oL.onclick=function(){
+                prev();
+                change(iNow);
+            };
+            oR.onclick=function(){
+                next();
+                change(iNow);
+            };
+            function change(index){
+                for(var i=0;i<aS.length;i++){
+                    aS[i].className='';
+                }
+                aS[index].className='show';
+            }
+            setInterval(function(){
+
+            },1000);
+            for(var i=0;i<aS.length;i++){
+                (function(index){
+                    aS[i].onclick=function(){
+                        if(index>iNow){
+                            move(aLi[iNow],{left:-400});
+                            aLi[index].style.left='400px';
+                            move(aLi[index],{left:0});
+                            change(index);
+                        }else{
+                            move(aLi[iNow],{left:400});
+                            aLi[index].style.left='-400px';
+                            move(aLi[index],{left:0});
+                            change(index);
+                        }
+                        iNow=index;
+                    };
+                })(i);
+            }
+        };
+    </script>
+</head>
+<body>
+<div id="prelude"></div>
+<div id="box">
+    <a href="javascroll:;" id="left">prev</a>
+    <a href="javascroll:;" id="right">next</a>
+    <ul id="ul1">
+        <li style="left:0; background:indianred;">1</li>
+        <li style="background:greenyellow;">2</li>
+        <li style="background:hotpink;">3</li>
+        <li style="background:green;">4</li>
+    </ul>
+    <div id="div1">
+        <span class="show">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+</div>
+</body>
+</html>

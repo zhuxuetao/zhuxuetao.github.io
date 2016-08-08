@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oV=document.querySelector('#v1');
+            var aBtn=document.querySelectorAll('input');
+            var oM=document.querySelector('meter');
+
+            // 播放
+            aBtn[0].onclick=function(){
+                oV.play();
+            };
+            // 暂停
+            aBtn[1].onclick=function(){
+                oV.pause();
+            };
+            // 快进
+            aBtn[2].onclick=function(){
+                oV.currentTime+=10;
+            };
+            // 快退
+            aBtn[3].onclick=function(){
+                oV.currentTime-=10;
+            };
+            // 音量+
+            aBtn[4].onclick=function(){
+                oV.volume+=0.1;
+            };
+            // 音量-
+            aBtn[5].onclick=function(){
+                oV.volume-=0.1;
+            };
+            // 静音
+            var bMuted=false;
+            aBtn[6].onclick=function(){
+                if(bMuted==false){
+                    oV.muted=true;
+                    this.value='取消静音';
+                }else{
+                    oV.muted=false;
+                    this.value='静音';
+                }
+                bMuted=!bMuted;
+            };
+            // 全屏
+            aBtn[7].onclick=function(){
+                oV.webkitRequestFullscreen();
+            };
+            // 进度条
+            oV.ontimeupdate=function(){
+                var scale=oV.currentTime/oV.duration;
+
+                oM.value=scale*100;
+            };
+
+            oV.onended=function(){
+                alert('播放结束');
+                oV.src='1.mp4';
+            };
+        };
+    </script>
+</head>
+<body>
+    <input type="button" value="播放">
+    <input type="button" value="暂停">
+    <input type="button" value="快进">
+    <input type="button" value="快退">
+    <input type="button" value="音量+">
+    <input type="button" value="音量-">
+    <input type="button" value="静音">
+    <input type="button" value="全屏">
+    <br>
+    <video src="2.mp4" id="v1"></video>
+    <meter min="0" max="100" style="width: 640px; height: 20px;"></meter>
+</body>
+</html>
+
+
+
+
+
+
+
+

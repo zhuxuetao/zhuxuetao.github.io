@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0; padding:0; list-style:none;}
+        body{overflow:hidden;}
+        #prelude{width:300%; height:300%; background:pink; position:absolute; border-radius:50%;}
+        #box{width:400px; height:300px; border:1px solid #000; margin:100px auto; position:relative; overflow:hidden;
+        opacity:0;}
+        #box ul{width:2000px; height:300px; position:absolute; left:0; top:0;}
+        #box ul li{width:400px; height:300px; background:deeppink; font-size:50px; text-align:center; line-height:300px;
+        color:#fff; float:left;}
+        #box ol{width:300px; height:10px; position:absolute; left:50%; bottom:10px; margin-left:-150px;}
+        #box ol li{width:50px; height:10px; margin-left:10px; background:#000; float:left;}
+        #box ol li span{display:block; height:10px; width:0; background:#fff;}
+    </style>
+    <script src="move.js"></script>
+    <script>
+        window.onload=function(){
+            var oPld=document.getElementById('prelude');
+            var w=oPld.offsetWidth;
+            var h=oPld.offsetHeight;
+            oPld.style.left=-w+'px';
+            oPld.style.top=-h+'px';
+
+            move(oPld,{left:-w/2,top:-h/2},{complete:function(){
+                move(oBox,{opacity:1});
+            }});
+            var oBox=document.getElementById('box');
+            var oUl=oBox.children[0];
+            var aLi=oUl.children;
+            var oOl=oBox.children[1];
+            var aS=oOl.getElementsByTagName('span');
+            var iNow=0;
+            function next(){
+                for(var i=0;i<aS.length;i++){
+                    aS[i].style.width=0;
+                }
+                move(aS[iNow],{width:50},{complete:function(){
+                    iNow++;
+                    if(iNow==aLi.length){
+                        iNow=0;
+                    }
+                    move(oUl,{left:-aLi[0].offsetWidth*iNow},{complete:function(){
+                        next();
+                    }});
+                }});
+            }
+            next();
+        };
+    </script>
+</head>
+<body>
+<div id="prelude"></div>
+<div id="box">
+    <ul>
+        <li>1</li>
+        <li style="background:greenyellow;">2</li>
+        <li style="background:yellow;">3</li>
+        <li style="background:orangered;">4</li>
+        <li style="background:darkred;">5</li>
+    </ul>
+    <ol>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+    </ol>
+</div>
+</body>
+</html>

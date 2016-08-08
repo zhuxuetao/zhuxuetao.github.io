@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        a.active{
+            padding-right: 20px;
+            background: url(play.gif) no-repeat right top;
+        }
+    </style>
+    <script>
+        function rnd(n,m){
+            return parseInt(Math.random()*(m-n))+n;
+        }
+        var arrSong=[
+            '千千阙歌',
+            '夜的钢琴曲',
+            '小苹果',
+            '时间都去哪儿了',
+            '雨的印记'
+        ];
+        window.onload = function () {
+            var aA=document.querySelectorAll('ol li a');
+            var oAudio=document.querySelector('audio');
+            var aBtn=document.querySelectorAll('input');
+
+            var iNow=0;
+            for(var i=0; i<aA.length; i++){
+                aA[i].dataset.index=i;
+                aA[i].ondblclick=function(){
+                    // iNow标明当前是第几首歌
+                    iNow=this.dataset.index;
+                    play(iNow);
+                };
+            }
+            function play(index){
+                for(var i=0; i<aA.length; i++){
+                    aA[i].classList.remove('active');
+                }
+
+                oAudio.src='mp3/'+arrSong[index]+'.mp3';
+                oAudio.play();
+                aA[index].classList.add('active');
+            }
+
+            oAudio.playState=1;
+
+            aBtn[0].onclick=function(){
+                oAudio.playState=0;
+            };
+            aBtn[1].onclick=function(){
+                oAudio.playState=1;
+            };
+            aBtn[2].onclick=function(){
+                oAudio.playState=2;
+            };
+            aBtn[3].onclick=function(){
+                oAudio.playState=3;
+            };
+            // 播放完毕
+            oAudio.onended=function(){
+                switch(oAudio.playState){
+                    case 0:
+                        play(iNow);
+                        break;
+                    case 1:
+                        iNow++;
+                        if(iNow<aA.length){
+                            play(iNow);
+                        }else{
+                            for(var i=0; i<aA.length; i++){
+                                aA[i].classList.remove('active');
+                            }
+                        }
+                        break;
+                    case 2:
+                        iNow=rnd(0, aA.length);
+                        play(iNow);
+                        break;
+                    case 3:
+                        iNow++;
+                        if(iNow>=aA.length){
+                            iNow=0;
+                        }
+                        play(iNow);
+                        break;
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <audio src="" controls></audio>
+    <h1>请双击播放</h1>
+    <ol>
+        <li><a href="javascript:;">千千阙歌</a></li>
+        <li><a href="javascript:;">夜的钢琴曲</a></li>
+        <li><a href="javascript:;">小苹果</a></li>
+        <li><a href="javascript:;">时间都去哪儿了</a></li>
+        <li><a href="javascript:;">雨的印记</a></li>
+    </ol>
+    <input type="button" value="单曲循环">
+    <input type="button" value="顺序播放">
+    <input type="button" value="随机播放">
+    <input type="button" value="循环播放">
+</body>
+</html>
+
+
+
+
+
+
