@@ -8,10 +8,10 @@ var Tween={Linear:function(t,b,c,d){return c*t/d+b},Quad:{easeIn:function(t,b,c,
 //d  总时间 			duration
 //var cur=fx(t,b,c,d)
 
-function getStyle(obj,sName){
-	return (obj.currentStyle||getComputedStyle(obj,false))[sName];
-}
 
+function getStyle2(obj,Name){
+	return (obj.currentStyle||getComputedStyle(obj,false))[Name];
+}
 function move2(obj,json,options){
 	options=options||{};
 	options.duration=options.duration||700;
@@ -20,7 +20,7 @@ function move2(obj,json,options){
 	var dis={};	
 	
 	for(var name in json){
-		start[name]=parseFloat(getStyle(obj,name));
+		start[name]=parseFloat(getStyle2(obj,name));
 		//opacity加默认值
 		if(isNaN(start[name])){
 			start[name]=1;
